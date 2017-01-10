@@ -15,7 +15,7 @@
 
     $serverName = $_SERVER['SERVER_NAME'];
     if (strcmp($serverName,'marathon.iems.northwestern.edu')==0){
-        include('/home/numarathon/marathon2015/Chicago2015/connectHere.php');
+        include('/home/numarathon/connectHere/houston2017.php');
     }
     
     else {
