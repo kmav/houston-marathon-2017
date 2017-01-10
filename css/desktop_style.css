@@ -1,0 +1,680 @@
+.container-fluid{
+    margin: 0px;
+    padding: 0;
+    height: 100%;
+    background: #e5e5e5;
+    width:100%;
+}
+body,html{
+    height:100%;
+    font-family: "Helvetica Neue", Geneva, sans-serif;
+  	font-weight: bold;
+}
+
+#topBar 
+{
+ 
+    font-size: 1.3vw;
+    text-align: center;
+    padding:0.45%;
+    width:100%;
+}
+.red
+{
+  background-color: red;
+  color: white;
+}
+.green
+{
+  background-color: #009933;
+  color: white;
+}
+.yellow
+{
+  background-color: yellow;
+}
+.orange
+{
+  background-color: orange;
+}
+.black
+{
+  background-color:black;
+  color: white;
+}
+.purple
+{
+  background-color: rgba(102,4,140,.9);
+}
+.gray
+{
+  background-color: gray;
+}
+
+
+
+.module{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	background: white;
+	margin: 2%;
+}
+
+#alertBar
+{
+    font-size: 1.7vh;
+    text-align: center;
+    background: white;
+    height: 100%;
+    padding:0.5%;
+}
+
+.blank{
+  padding: 0;
+}
+
+#map
+{
+    background: black;
+    padding: 0;
+    margin: 0;
+}
+
+#densityPlot
+{
+  margin:0;
+  padding:0;
+  font-size:2.1vh;
+}
+#densityPlotH{
+  margin:0;
+  padding:0;
+  font-size:2.1vh;
+}
+
+#aidStation{
+  padding:2% 0 0 0;
+  margin: 0;
+  height: 100%;
+  float: right;
+  vertical-align: middle;
+  margin-top:4%;
+  margin-right:1%;
+  font-size:2.1vh;
+}
+
+#medicalTent{
+  padding:2% 0 0 0;
+  margin-left: 5%;
+  height: 100%;
+  font-size:2.1vh;
+}
+
+#sidebar{
+  padding:0 10px 0 0;
+}
+#smallRow{
+    
+    height: 5%;
+    margin: 0 0 0 0;
+    width:100%;
+}
+
+#mediumRow{
+    height: 9%;
+}
+
+#largeRow{
+    height: 25%;
+}
+#xLargeRow{
+    height:86%;
+    width:100%;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebarTopRow
+{
+  height: 23%;
+  margin-top:1%;
+}
+
+#sidebarGraphFull
+{
+  height: 36%;
+  font-size:1.2vw;
+  text-align:center;
+  margin-top:1%;
+}
+
+#sidebarGraphs
+{
+  height: 33%;
+  font-size:1.2vw;
+  text-align:center;
+  margin-top:1%;
+}
+
+.sidebarGraphs
+{
+   height: 33%;
+  font-size:1.2vw;
+  text-align:center;
+  margin-top:1%; 
+}
+
+#densityGraphs{
+  height: 33%;
+  font-size:1.2vw;
+  text-align:center;
+  margin-top:8%; 
+  width: 100%;
+  padding: 2% 0 0 0;
+
+}
+#plots
+{
+  height: 36%;
+  font-size:1.2vw;
+  text-align:center;
+  margin-top:1%;
+  padding-right: 10px;
+}
+
+#logos
+{
+    
+}
+
+/*   WEATHER STUFF */
+/*
+  Docs at http://http://simpleweatherjs.com
+
+  Look inspired by http://www.degreees.com/
+  Used for demo purposes.
+
+  Weather icon font from http://fonts.artill.de/collection/artill-weather-icons
+
+  DO NOT hotlink the assets/font included in this demo. If you wish to use the same font icon then download it to your local assets at the link above. If you use the links below odds are at some point they will be removed and your version will break.
+*/
+
+@font-face {
+    font-family: 'weather';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_f_iconsRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#weather {
+
+ margin: 0;
+ margin-top:2%;
+ padding: 5% 0 0 0;
+ text-align: center;
+}
+
+i {
+  color: #333333;
+  font-family: weather;
+  font-size: 95px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+#weather h2 {
+  margin: 0 0 0 0px;
+  color: #333333;
+  font-size: 2.7vw;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#weather ul{ 
+}
+
+#weather li {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 4.5px;
+  text-transform: capitalize;
+  font-size: 1.1vw;
+}
+
+
+#weather .currently {
+  margin: 0 4px;
+}
+
+#runners_box{
+  width: 85%;
+  float: right;
+  margin-top: 5%;
+  border: 1px solid white;
+	padding: 1%;
+	background-color: black;
+}
+
+#runners_box p{
+	font-family: Lato, Helvetica, sans-serif;
+	color:white;
+	font-size: 2.5vh;
+	text-align: right;
+	margin-bottom: 5%;
+	margin-right: 3%;
+	line-height: 0.8;
+}
+
+#legendBox{
+ padding:2%;
+}
+
+#legendBox p{
+	font-family: Lato, Helvetica, sans-serif;
+	color:black;
+	font-size: 2.1vh;
+  line-height:1.1;
+	padding-left:4%;
+	font-weight: normal;
+}
+
+#legendBox h5{
+	margin: 0.5%;
+	font-size: 2.1vh;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	margin-bottom: 7%
+}
+
+#legendBox .boxes {
+	margin-top: 5px;
+	margin-left: 5px;
+	position: absolute;
+	width: 30px;
+	height: 10px;
+	text-align: right;
+	border-radius: 5px;
+	
+}
+#infoBox{
+	float: left;
+  margin-top: 0%;
+  margin-left: 8%;
+  margin-right:2%;
+	padding: 1%;
+}
+
+#infoBox p{
+	font-family: Lato, Helvetica, sans-serif;
+	color:white;
+	font-size: 1.5vw;
+	text-align: left;
+	margin-right: 3%;
+	line-height: 1;
+}
+
+.times{
+  margin: auto;
+}
+
+.full {
+    height:100%;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+  .axis text {
+    font-size: 1vw;
+  }
+  
+  .grid .tick {
+    stroke: gray;
+    opacity: 0.7;
+    display: none;
+  }
+  
+  .grid path {
+    stroke-width: 0;
+  }
+  
+  rect {
+    rx: 3;
+    ry: 3;
+  }
+  
+  rect:hover {
+    fill: orange;
+  }
+  
+    #tooltip {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+  
+  #tooltip.hidden {
+    display: none;
+  }
+  
+  #tooltip p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  #alertText {
+    font-size: 1.2vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+
+  }
+  
+  #alertStatus {
+    height: 100%;
+    font-size: 300%;
+    float: left;
+    margin-top: 25px;
+  }
+  
+  #RunnersStarted {
+    
+  }
+  
+  #RunnersDropped {
+    
+  }
+  
+  #RunnersOnCourse {
+   border-top:solid white 1px;
+   margin-left:3px;
+  }
+  
+  #RunnersFinished {
+    top: 2%;
+  }
+  
+  #PatientsSeen,#HospitalTransports,#InMedical {
+    font-size: 1.4em;
+    margin-top:10px;
+  }
+  
+  /*#HospitalTransports {}*/
+  
+  #aramcoLogo{
+    background-size: 95%;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    vertical-align:middle;
+  }
+  #aramcoLogo.white{
+     background-image: url("../img/aramcoLogo_color.png");
+  }
+  #aramcoLogo.black{
+    background-image: url("../img/aramcoLogo.png");
+    background-color: transparent;
+  }
+  
+  #marathonLogo{
+    background-size: 65%;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    position: relative;
+    vertical-align: middle;
+  }
+  
+  #marathonLogo.white {
+    background-image: url("../img/houstonLogo.png");
+  }
+  
+    #marathonLogo.black {
+    background-image: url("../img/houstonLogo_color.png");
+    background-color: transparent;
+  }
+  
+  #NUlogo {
+    text-align: left;
+    font-size: 1.6em;
+    margin-left: 3%;
+    height: 100%;
+    left: -1%;
+    z-index: +1;
+    vertical-align: middle;
+    background-size: 70%;
+    position: relative;
+    top: 30%;
+  }
+  
+  #NUlogo.purple {
+    background-image: url("../img/NUlogo.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
+  
+    #NUlogo.white {
+    background-image: url("../img/NU_logo_white.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: white;
+  }
+  
+  #aidMarker{
+    background-image: url("../img/aidMarker.PNG");
+    width:45%;
+    height:45%;
+    background-repeat: no-repeat;
+    float: left;
+  }
+  #mileMarker{
+    background-image: url("../img/mileMarker.PNG");
+    width:45%;
+    height:45%;
+    background-repeat: no-repeat;
+  }
+  #halfMarker{
+    background-image: url("../img/halfMarker.PNG");
+    width:45%;
+    height:45%;
+    background-repeat: no-repeat;
+  }
+  
+  ul{
+    list-style: none;
+    margin: 0 0 0 0;
+    padding:5px;
+  }
+   #densityLegend{
+    position:relative;
+    text-align: left;
+    font-size: .7vw;
+  }
+
+  .refreshButton{
+    margin-top:8%;
+  }
+  
+  .refreshButton{
+    background: transparent;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+    /* icons for html and css */
+  
+  .my-icon {
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 10px;
+    z-index: 1;
+  }
+  
+  .icon-dc {
+    background: rgba(58, 153, 222, 0.9);
+  }
+  
+  .icon-sf {
+    background: rgba(58, 153, 222, 0.9);
+  }
+  
+  .icon-hm{
+    width: 23px;
+    height: 20px;
+    border-radius: 30%;
+    background: rgba(102,4,140,.9);
+    border-color: white;
+    border: 1px solid;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .icon-hm1{
+    width: 23px;
+    height: 20px;
+    border-radius: 30%;
+    background: rgba(165,111,191,.9);
+    border-color: white;
+    border: 1px solid;
+    color: white;
+    font-size: 12px;
+  }
+  
+  
+  .txtOnMap
+  {
+    font-size: 70px;
+  }
+  
+  #map_legend {
+  width: 100%;
+  position: absolute;
+  bottom: 3%;
+  right: 8%;
+  z-index: 30;
+  color: white;
+}
+
+#map_legend p{
+	font-family: Lato, Helvetica, sans-serif;
+	color:white;
+	font-size: 1.5vh;
+	text-align: right;
+	margin-bottom: 1%;
+}
+
+#map_legend h5{
+	text-align: right;
+	border-radius: 5px;
+	float: right;
+}
+
+#map_legend .boxes {
+	margin-top: 5px;
+	margin-left: 5px;
+	position: absolute;
+	width: 30px;
+	height: 10px;
+	text-align: right;
+	border-radius: 5px;
+	
+}
+
+#map_legend .circles{
+margin-top: 5px;
+margin-left: 5px;
+position: absolute;
+width: 20px;
+height: 20px;
+text-align: right;
+border-radius: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+#legendBox{
+  margin-left: 5%;
+}

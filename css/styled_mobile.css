@@ -1,0 +1,59 @@
+body {
+      	font-family: "Helvetica Neue", Geneva, sans-serif;
+      	font-size: 2em;
+}
+h1, h2, h3, h4{
+      	font-weight: normal;
+}
+h1{
+    font-size: 2.4em;
+    font-weight: bold;
+}
+h2{
+    font-size: 2.4em;
+}
+h3{
+    font-size: 1.6em;
+}
+.table{
+    font-size: 2em;
+}
+.submitButton{
+    width: 35%;
+    font-size: 2.2em;
+}
+.inAS{
+    margin-left: 5%;
+    width: 25%;
+    font-size: 2.2em;
+}
+#timingDiv{
+    font-size: 2.5em;
+    border: 2px solid black;
+    font-weight: bold;
+}
+#timeTitle {
+    margin-right: 3%;
+    float: left;
+    
+}
+#clock, #elapsedTime{
+    font-weight: bold;
+}
+
+.menuHolder{
+    font-size: 2.2em;
+    
+}
+
+.yours{
+    font-weight: bold;
+}
+.tstamp{
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+}
+#alertMessage{
+     color: black;   
+}

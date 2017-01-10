@@ -1,0 +1,56 @@
+data
+
+- show how many should've passed the 5,10,15,20,25,30k marks (up to finish)
+- show for 2014,2013,2012 and NOW
+
+	UPDATE GRAPH EVERY 10 MINUTES
+
+
+
+-------------
+also,
+
+
+Aid Stations
+	Get all data - which has time of arrival/checkout by medical tent
+	Have chart every 10 minutes with all aid stations together in different lines
+		Show number of patients arrived
+
+	Add to that a chart with us
+
+	This will allow to show how different is this from previous years
+
+---------
+
+keep runner data at:
+	/runners.html
+
+keep medical tent data at
+	/aidstations.html
+
+---------
+
+
+TO DO
+
+*add medical tent to database with all the information
+MEDICAL TENTS
+	Add fields to database and columns to archiving database
+	Add fields to form with information on aid station
+	Add script to change data (within the input_medical.php and update_medical.php files) of the medical tents
+
+AID STATIONS
+	Technical
+		Change aid station data so that it changes automatically unless override to WARNING by user
+		Reduce numbers to realistic numbers
+	Styling
+		-reduce opacity of background 'total beds' column
+
+
+WEATHER
+	Add weather at each aid station, sourced from????? 
+
+ARCHIVING (done???)
+	Archive the status of the race (runners, lead status, patients seen)
+
+GENERAL

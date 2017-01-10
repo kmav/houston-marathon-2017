@@ -1,0 +1,18 @@
+.actives{
+    background-color: #132FAD;
+    color: white;
+  	font-family: "Helvetica Neue", Geneva, sans-serif;
+}
+
+.menuHolder{
+    margin-left: 10px;
+}
+a.link{
+    color: white;
+}
+.actives :hover{
+    background-color: #132FAD;
+}
+.li :hover{
+    background-color: #132FAD;
+}

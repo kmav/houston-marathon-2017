@@ -1,0 +1,122 @@
+/*----------------------------------------------
+CSS Settings For HTML Div ExactCenter
+------------------------------------------------*/
+body{
+    
+    font-family: "Helvetica Neue", Geneva, sans-serif;
+    font-weight: lighter;
+
+}
+#main {
+width:900px;
+margin:50px auto;
+}
+span {
+color:red
+}
+h3, h2, h4, .pagelink{
+        font-weight: lighter;
+}
+
+h2 {
+text-align:center;
+border-radius:10px 10px 0 0;
+margin:-10px -40px;
+padding:15px;
+
+
+}
+h1 {
+    text-align: center;
+    font-weight: normal;
+    
+    
+}
+hr {
+border:0;
+border-bottom:1px solid #ccc;
+margin:10px -40px;
+margin-bottom:30px
+
+}
+#login {
+width:500px;
+border-radius:10px;
+border:2px solid #ccc;
+padding:10px 40px 25px;
+margin: auto;
+}
+input{
+    text-align: center;
+}
+input[type=text],input[type=password],[type=email] {
+width:90%;
+padding:10px;
+margin-top:8px;
+margin-left: auto;
+margin-right: auto;
+border:1px solid #ccc;
+padding-left:5px;
+font-size:16px;
+}
+input[type=submit] {
+width:90%;
+background-color:#132FAD;
+
+color:#fff;
+border:3px solid #132FAD;
+padding:10px;
+font-size:20px;
+cursor:pointer;
+border-radius:5px;
+margin-bottom:15px;
+margin-top: 15px;
+margin-left: 1%;
+margin-right: auto;
+}
+.pagelink {
+    width:90%;
+    background-color:#132FAD;
+    
+    
+    color:#fff;
+    border:3px solid #132FAD;
+    padding:10px;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:5px;
+    margin-bottom:15px;
+    margin-top: 15px;
+    margin-left: 1%;
+    margin-right: auto;
+
+}
+a{
+    text-decoration: none;
+    text-align: center;
+}
+a :hover{
+    jbackground-color: rgb(12,117,31);
+}
+
+
+#profile {
+padding:50px;
+border:1px dashed grey;
+font-size:20px;
+background-color:#DCE6F7
+}
+#logout {
+float:right;
+padding:5px;
+border:dashed 1px gray
+}
+.small{
+    color: white;
+    font-size: 75%;
+    font-style: italic;
+    
+}
+select{
+    font-size: 1.7em;
+}
