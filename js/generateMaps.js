@@ -21,7 +21,7 @@ function plotFullMile(update){
     var MileMarkers = [];
     var fullMileLoc = [];
     d3.csv("data/milemarkers/milefull.csv", function(d) {
-        ////console.log(d);
+        //////(d);
         fullMileLoc = d;
         return {
             MileNumber: d.MileNumber,
@@ -31,7 +31,7 @@ function plotFullMile(update){
     },
     function(error,rows) {
         
-        //console.log(rows);
+        ////(rows);
         
         for (var i = 0; i < 25; i++) {
             geojson[16+i]["geometry"]["coordinates"] = [rows[i].Longitude,rows[i].Latitude]
@@ -39,7 +39,7 @@ function plotFullMile(update){
             
             geojson[16+i]["properties"]["icon"]["className"] = "my-icon icon-hm";
             geojson[16+i]["properties"]["icon"]["iconSize"] = null;
-            ////console.log(MileMarkers);
+            //////(MileMarkers);
         }
         
         // Miles.setGeoJSON(MileMarkers);
@@ -53,7 +53,7 @@ function plotFullMile(update){
 //     MileMarkers = [];
 //     var halfMileLoc = [];
 //     d3.csv("data/milemarkers/milehalf.csv", function(d) {
-//         ////console.log(d);
+//         //////(d);
 //         halfMileLoc = d;
 //         return {
 //             MileNumber: d.MileNumber,
@@ -63,7 +63,7 @@ function plotFullMile(update){
 //     },
 //     function(error,rows) {
         
-//         //console.log(rows);
+//         ////(rows);
         
 //         for (var i = 0; i < 5; i++) {
 //             MileMarkers.push({
@@ -81,7 +81,7 @@ function plotFullMile(update){
 //                     'marker-symbol': (i+8)
 //                 }
 //             });
-//             ////console.log(MileMarkers);
+//             //////(MileMarkers);
 //         }
         
 
@@ -123,7 +123,7 @@ function plotAS(update){
     },
     //rows takes in all the rows
     function(error, rows) {
-        //console.log(rows);
+        ////(rows);
     
         AidStationsGEOJSON = []
         
@@ -132,7 +132,7 @@ function plotAS(update){
             //debugger;
             //gets percentage of patients (beds = capacity of aid stations)
             var percent = 100 * (+rows[i].CurrentPatients / +rows[i].Beds);
-            //console.log(+rows[i].Beds);
+            ////(+rows[i].Beds);
             
             //if that aid station is closed (=2)
             if ((+rows[i].Status) == 2) {
@@ -236,7 +236,7 @@ function plotAS(update){
           //only add medical tent if it's the first time
           //add medical tent markers (only show Balbo, not both Balbo/Pod) 
           for(var i=16; i<17; i++){ 
-              ////console.log(rows[i].Longitude);
+              //////(rows[i].Longitude);
               if (size=="medium"){
                 var class_size = "fa-2x";
               }
@@ -272,13 +272,13 @@ function generateLines() {
         // getMinute() is in updateAll
         var minute = getMinute();
         // debugger;
-        //console.log(minute);
-        //console.log(data);
+        ////(minute);
+        ////(data);
         
         //divide by two because data array is every two minutes
         //35th minute will be 17th element 
         var data = data[parseInt(minute/2)];
-        console.table(data);
+        //.table(data);
 
         //map looks at every element in the array.
         var data = $.map(data, function(value, index) {
@@ -287,15 +287,15 @@ function generateLines() {
         });
 
 
-        if (error) return console.warn(error);
-        // console.table(data);
+        if (error) return //.warn(error);
+        // //.table(data);
 
         //26 miles + last segment (26.2) + 3 mile markers for where the half marathon splits 
         for (var i = 0; i < 30; i++) {
             
             //number of runners at mile i (because miles begin at index 2)
             var runners = +data[i+2];
-            //console.log("Mile "+i+" - runners: "+runners);
+            ////("Mile "+i+" - runners: "+runners);
             // debugger;
             //set properties of that segment i
             //default is green
@@ -328,7 +328,7 @@ function generateLines() {
                 segmentStyle.color = '#a6a6a6';
             }
             
-            //console.log(segmentStyle);
+            ////(segmentStyle);
             
             //remove the old map if you have done the first one already
             if (started==1){
@@ -352,12 +352,12 @@ function plotSegment(segmentNumber, PolylineStyling, runners) {
   
     //draws a single mile on the map 
     
-    //console.log("Inside plotSegment!");
+    ////("Inside plotSegment!");
     //each mile on the map is a bunch of connected dots and polyline draws it
     var polyline = d3.csv('data/milemarkers/mile' + (segmentNumber + 1) + '.csv', function(error, data) {
-        //console.log('interval: '+segmentNumber)
+        ////('interval: '+segmentNumber)
         var i = 0
-        if (error) return console.warn(error);
+        if (error) return //.warn(error);
         //now try to create a mapping of it
         coords = data.map(function(d, i) {
             return [parseFloat(d.Latitude), parseFloat(d.Longitude)];
@@ -381,9 +381,9 @@ function runnerTracking(){
       var runLoc = [];
       d3.csv("data/gen_info.csv", function(d) {
           // Add a LatLng object to each item in the dataset
-          console.table(d);
-          console.log("Here is the tracking data:");
-          console.log(d);
+          //.table(d);
+          //("Here is the tracking data:");
+          //(d);
           runLoc = d;
           return {
               latLWM: +d.LeadWheelchairMaleLat,
@@ -414,8 +414,8 @@ function runnerTracking(){
       
       }, function(error, rows) {
       
-        //console.log(rows);
-        console.table(rows);
+        ////(rows);
+        //.table(rows);
         // debugger;
         //debugger;
         geojson[0]["geometry"]["coordinates"] = [rows[0].longLWM,rows[0].latLWM]
@@ -454,14 +454,14 @@ function runnerTracking(){
         
         trackingLayer.clearLayers();
         trackingLayer.setGeoJSON([]);
-        console.log("Putting them on the map");
-        console.log(geojson);
+        //("Putting them on the map");
+        //(geojson);
         trackingLayer.setGeoJSON(geojson);
         
       });
       
-    //console.log('here is the geojson');
-    //console.log(geojson);
+    ////('here is the geojson');
+    ////(geojson);
     trackingLayer.on('layeradd', function(e) {
       var marker = e.layer,
           feature = marker.feature;
@@ -479,18 +479,18 @@ function raceGuardTracking(){
         
         var numberOfRows = d.length; // we can easily get the number of rows (excluding the title row)
         
-        console.log("Number of trackers: " + numberOfRows);
+        //("Number of trackers: " + numberOfRows);
         
         var geojson = [];
         
 
         for(var i=0; i<numberOfRows; i++){
           
-          // console.log("long:" + d[i].long);
-          // console.log("lat:" + d[i].lat);
+          // //("long:" + d[i].long);
+          // //("lat:" + d[i].lat);
           
           // newjson["geometry"]["coordinates"] = [d[i].long,d[i].lat];
-          // console.log(newjson["geometry"]["coordinates"]);
+          // //(newjson["geometry"]["coordinates"]);
           geojson.push(          
             {
               "type": "Feature",
@@ -509,13 +509,13 @@ function raceGuardTracking(){
           
             raceGuardsLayer.clearLayers();
             raceGuardsLayer.setGeoJSON([]);
-            console.log("geojson");
-            console.log(geojson);
+            //("geojson");
+            //(geojson);
             raceGuardsLayer.setGeoJSON(geojson);
       });
 
-    //console.log('here is the geojson');
-    //console.log(geojson);
+    ////('here is the geojson');
+    ////(geojson);
     raceGuardsLayer.on('layeradd', function(e) {
       var marker = e.layer,
           feature = marker.feature;
@@ -549,7 +549,7 @@ var polylineArr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 var coordsArr = [];
 //now try to create slices of 2 by 2
 
-//console.log("Putting the mile lines on the map ");
+////("Putting the mile lines on the map ");
 var PolylineStyling = generateLines();
     
 //for gps trackers and runners (blue dots that are linked to GPS trackers)    
@@ -1207,10 +1207,10 @@ trackingLayer.setGeoJSON(geojson);
 //raceGuardsLayer.setGeoJSON(geojson);
 
 
-//console.log("Printing the miles!");
+////("Printing the miles!");
 plotFullMile(1);
 // plotHalfMile(1);
-//console.log("Putting aid stations on the map");
+////("Putting aid stations on the map");
 //plot Aid Stations
 plotAS(1);
 //plotHalfMile(1);

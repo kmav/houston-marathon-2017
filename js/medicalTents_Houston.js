@@ -35,14 +35,14 @@ function colorBars(current,beds){
 
 function drawMedicalTents(data){
 
-	console.table(data);
+	//.table(data);
 	//we only need the ones with attribute Aid Station
 	var MedicalTents = []
 
 	//filter aid station if it's an Aid Station
 	var MedicalTentsDataset = data.filter(filterMedicalTents);
 	
-//	console.table(MedicalTentsDataset);
+//	//.table(MedicalTentsDataset);
 	//debugger;
 	//now we will plot this data with following:
 		//show rectangles with:
@@ -60,8 +60,8 @@ function drawMedicalTents(data){
 					.domain(d3.range(MedicalTentsDataset.length))
 					.rangeRoundBands([h-p,2*p],0.15);
 	
-	console.log(yScale(2));
-	console.log(yScale(1));
+	//(yScale(2));
+	//(yScale(1));
 
 	//set the y scale  (for actual numbers)
 	var xScale = d3.scale.linear()
@@ -156,12 +156,12 @@ function drawMedicalTents(data){
 					return p;
 				})
 				.attr("y",function(d,i){
-					//console.log(h));
+					////(h));
 					return (yScale(i));
 					//return h-p-yScale(+d.CurrentPatients);
 				})
 				.attr("width",function(d){
-					//console.log(h-yScale())
+					////(h-yScale())
 					//return yScale(+d.CurrentPatients);
 					return (xScale(+d.Beds)-p);
 				})
@@ -180,12 +180,12 @@ function drawMedicalTents(data){
 					return p;
 				})
 				.attr("y",function(d,i){
-					//console.log(h));
+					////(h));
 					return (yScale(i));
 					//return h-p-yScale(+d.CurrentPatients);
 				})
 				.attr("width",function(d){
-					//console.log(h-yScale())
+					////(h-yScale())
 					//return yScale(+d.CurrentPatients);
 					return (xScale(+d.CurrentPatients)-p);
 				})
@@ -249,7 +249,7 @@ function drawMedicalTents(data){
 		
 	//figure out what the spacing is between each item
 	//add the text that says what aid station number
-	// console.log("putting new data");
+	// //("putting new data");
 
 	
 	
@@ -259,7 +259,7 @@ function drawMedicalTents(data){
 		
 	svg.selectAll(".bedstaken")
 		.attr("fill",function(d){
-			console.log(d.Status);
+			//(d.Status);
 			
 			//figure out colors based on total beds and current beds
 			return colorBars(+d.CurrentPatients,+d.Beds);

@@ -38,7 +38,7 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
     <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
     <script src="js/leaflet.awesome-markers.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script> -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -87,7 +87,7 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
                     <div class="col-sm-2 full"><!--Runners on course stat-->
                     </div>
                     <div class="col-sm-3 full" class='times'>
-                        <div class='row'>Time</div>
+                        <div class='row'>Clock Time</div>
                         <div class='row'>
                             <span id='clock'>&nsbp</span>
                         </div>
@@ -137,10 +137,10 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
                 <div id="map_legend">
 					<p> Runners: </p>
 				<p>Opened Road <span class="boxes gray"></span></p>
-			        <p>0-2000 <span class="boxes green"></span></p>
-			        <p >2000-4000 <span class="boxes yellow"> </p>
-			        <p>4000-600 <span class="boxes orange"> </p>
-			        <p>6000+ <span class="boxes red"> </p>
+			        <p>0-1000 <span class="boxes green"></span></p>
+			        <p>1000-2000 <span class="boxes yellow"> </p>
+			        <p>2000-3000 <span class="boxes orange"> </p>
+			        <p>3000+ <span class="boxes red"> </p>
 				<p> Markers: </p>
 				<p> Miles <span class="circles purple"></span></p>
 				<p> Aid Stations <span class="circles green"></span></p>			
@@ -151,44 +151,13 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
                 <div class='col-sm-5 full' id='sidebar'>
                     <div class='col-sm-12 full'>
                     <div class="row" id="sidebarTopRow">
-                        <!--<div class='col-sm-1 full blank'></div>-->
-                        <!--<div class='col-sm-3 full' id='legend'>
-                         
-                         <div class='legend'>
-                             <div class='legend-scale'>
-                                Runner Density
-                                 <ul class='legend-labels'>
-                                    <li><span style='background:#a6a6a6; float:left'></span>0 - 500</li> 
-                                    <li><span style='background:#0BB50B; float:left'></span>500 - 1000</li>
-                                    <li><span style='background:#FFDC00; float:left'></span>1000 - 2000</li>
-                                    <li><span style='background:#FFA500; float:left'></span>2000 - 3000</li>
-                                    <li><span style='background:#FF0000; float:left'></span>3000 - 4000</li>
-                                 </ul>
-                             </div><!--end legend-scale-->
-                         <!--</div><!--end class legend-->
-                        <!--</div><!--end 2 col density legend div-->
-                        
-                        <!--<div class='col-sm-3 full' id='legend'>
-
-                            <div class='legend'>
-                             <div class='legend-scale'>
-                                Bed Occupancy
-                                 <ul class='legend-labels'>
-                                    <li><span style='background:#0BB50B;'></span>&lt;50% full</li>
-                                    <li><span style='background:#FFDC00;'></span>50% - 90%</li>
-                                    <li><span style='background:#FF0000;'></span>>90%</li>
-                                    <li><span style='background:#878787;'></span>Closed</li>
-                                 </ul>
-                             </div><!--end legend-scale-->
-                         <!--</div><!--end class legend-->
-                        <!--</div><!--end of next legend-->
                         
                         <!--<div class='col-sm-1 full blank'></div>-->
                         <div class='col-sm-5 full module' id="legendBox">
                             <h5>Legend (Bed Occupancy)</h5>
-			                <p> &lt50% <span class="boxes green"></span></p>
-			                <p> 50-90% <span class="boxes yellow"> </p>
-			                <p> >90% <span class="boxes red"> </p>
+			                <span class="boxes green"></span><p>&lt50%</p>
+			                <span class="boxes yellow"></span><p>50-90% </p>
+			                <span class="boxes red"></span><p>90% </p>
                         </div>
                         
                         <div class='col-sm-6 full module' id='weather'>

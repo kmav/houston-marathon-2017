@@ -9,7 +9,7 @@ function displayDrops(data){
         
     d3.select("#RunnersDropped")
     .text("\u2212 Drops: " + Math.round(currentDrops));
-    console.log(currentDrops+"current");
+    //(currentDrops+"current");
 }
 
 function displayRunnerData(data){
@@ -25,11 +25,11 @@ function displayRunnerData(data){
     d3.select("#RunnersFinished")
     .text("\u2212 Finished: " + currentFinished);
     
-    console.log(currentMin + "minute")
+    //(currentMin + "minute")
 }
     
 function displayInfo(data){
-    console.table(data);
+    //.table(data);
     
 	var run = data[0].runnersOnCourse;
     var runnersFinished = data[0].runnersFinished;
@@ -41,7 +41,12 @@ function displayInfo(data){
     var AlertLong = data[0].AlertLong; 
     var message = data[0].Alert;
     var shelterDisplay = data[0].shelterDisplay;
-    console.log("SHELTER DISPLAY::::: "+shelterDisplay);
+    
+    // console.log(message);
+    // console.log(shelterDisplay);
+    // console.log(AlertLat);
+    // console.log(1);
+    //("SHELTER DISPLAY::::: "+shelterDisplay);
     
     //display runners finished
     /*d3.select("#RunnersOnCourse")
@@ -63,7 +68,7 @@ function displayInfo(data){
     d3.select("#PatientsSeen")
     .text("Treatments: " + totalTreatments);
     */
-    console.log(hospitalTransports+" transports");
+    //(hospitalTransports+" transports");
     
     d3.select("#HospitalTransports")
     .text("Hospital Transports: " + hospitalTransports);
@@ -83,7 +88,7 @@ function displayInfo(data){
     */
     /*d3.select("#RunnersDropped")
     .text("\u2212 Drops: " + test);
-    console.log('testing drops')
+    //('testing drops')
     */
     //d3.select("#RunnersFinished")
     //.text("\u2212 Finishers: " + test);
@@ -96,11 +101,11 @@ function displayInfo(data){
         .attr("class",function(){
             switch (+emergencyCheck){
                 case 0:
-                    console.log("alert bar white");
+                    //("alert bar white");
                     return 'white';
                     break;
                 case 1:
-                    console.log("alert bar red");
+                    //("alert bar red");
                     return 'red';
                     break;
             }
@@ -110,11 +115,11 @@ function displayInfo(data){
     d3.select("#alertText")
     .text(message);
     
-    console.log(message);
+    //(message);
     
     d3.select("#mediumRow")
         .attr("class",function(){
-            console.log(Status);
+            //(Status);
             switch (+Status){
                 case 0:
                     return 'green';
@@ -169,23 +174,23 @@ function displayInfo(data){
 
     
     //display runners finished
-    // console.log(temp);
-    // console.log(windspeed);
+    // //(temp);
+    // //(windspeed);
     
     d3.select("#Temp")
     .text(temp + " °F");
     
-    console.log("TEMPERATURE: "+temp)
+    //("TEMPERATURE: "+temp)
     
     d3.select("#WindHumid")
     .text(windspeed + " mph " + winddirec + ", RH: " + humidity + "%");
     
-    // console.log(run);
-    // console.log(runnersFinished);
+    // //(run);
+    // //(runnersFinished);
     
     //adding popup emergency marker on map 
-                // console.log(AlertLat);
-                // console.log(AlertLong);
+                // //(AlertLat);
+                // //(AlertLong);
     /*           L.mapbox.featureLayer({
                     type: 'Feature',
                     geometry: {
@@ -227,7 +232,7 @@ alertMarker.addTo(map);
 }
 
 if (shelterDisplay==1){
-    console.log("now I'll put the dots onthe map");
+    //console.log("now I'll put the dots onthe map");
 
 
 //// shelters
@@ -237,7 +242,7 @@ if (shelterDisplay==1){
     var g = svg.append("g").attr("class", "leaflet-zoom-hide");
     
     function project(ll) {
-        //console.log('projecting:');
+        ////('projecting:');
       // our data came from csv, make it Leaflet friendly
       var a = [+ll.lat, +ll.lon]; 
       // convert it to pixel coordinates
@@ -248,8 +253,8 @@ if (shelterDisplay==1){
     d3.csv("data/shelters.csv", function(err, data) {
       var dots = g.selectAll("circle.dot")
         .data(data)
-      console.log("data on shelters:")
-      console.table(data);
+      //("data on shelters:")
+      //.table(data);
       dots.enter().append("circle").classed("dot", true)
       .attr("r", 1)
       .style({

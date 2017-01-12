@@ -28,7 +28,7 @@ function colorBars(current,beds,status){
 	//initial check for closed!
 	if (+status==2){
 		return "rgb(112,112,112)";
-		////console.log("BLACK!!!");
+		//////("BLACK!!!");
 	}
 	var percent = 100*(+current)/(+beds);
     if (percent >= 100) {
@@ -74,8 +74,8 @@ var sortItems = function(a,b){
 function filterByMinute(obj){
   var minute = getMinute();
   minute = minute - minute%minuteInterval;
-  // ////console.log(obj);
-  // ////console.log(+obj.Minute+" = "+minute);
+  // //////(obj);
+  // //////(+obj.Minute+" = "+minute);
   return (+obj.Minute==minute);
 }
 
@@ -109,7 +109,7 @@ function getMinute() {
 	var elapsedMinutes = parseInt(elapsedTime*timeMultiplier / 60000);
 	var elapsedMinutes = elapsedMinutes + elapsedMinutes%2;
     
-  ////console.log("Minute: "+elapsedMinutes);
+  //////("Minute: "+elapsedMinutes);
   
   return (elapsedMinutes);
 
@@ -121,7 +121,7 @@ function updateClock()
 
 	//make sure we're on the right timezone
 	var offset = currentTime.getTimezoneOffset();
-	//////console.log(offset);
+	////////(offset);
 	var difference = offset ;
 
 	currentTime = new Date(currentTime.getTime());// - difference*60000);
@@ -176,7 +176,7 @@ function updateClock()
 
 	var elapsedTimeString = elapsedHours + ":"+ elapsedMinutes+":"+elapsedSeconds;
 	document.getElementById('elapsedTime').firstChild.nodeValue = elapsedTimeString;
-	//////console.log(elapsedTimeString)
+	////////(elapsedTimeString)
 }
 
 function updateMaps()
@@ -195,9 +195,9 @@ function updateASGraph(data)
 {
 	
 
-	////console.log(window.location.pathname);
-	////console.log("redrawing aid stations");
-	console.table(data);
+	//////(window.location.pathname);
+	//////("redrawing aid stations");
+	//.table(data);
 
 	var AidStations = [];
 	var AidStationDataset =  data.filter(filterAidStations);
@@ -246,7 +246,7 @@ function updateASGraph(data)
 	}
 	
 	var ySpacing = (yScale(2)-yScale(1))/2;
-	//console.table(AidStationDataset);
+	////.table(AidStationDataset);
 	
 	var bars = svg.selectAll(".bedstaken")
 		.data(AidStationDataset,key);
@@ -287,13 +287,13 @@ function updateASGraph(data)
 			return p;
 		})
 		.attr("y",function(d,i){
-			//////console.log(h));
-			//////console.log(yScale(i)+"yscale in AS");
+			////////(h));
+			////////(yScale(i)+"yscale in AS");
 			return (yScale(i));
 			//return h-p-yScale(+d.CurrentPatients);
 		})
 		.attr("width",function(d){
-			//////console.log(h-yScale())
+			////////(h-yScale())
 			//return yScale(+d.CurrentPatients);
 			return (xScale(+d.Beds)-xScale(0));
 		})
@@ -308,14 +308,14 @@ function updateASGraph(data)
 					return p;
 				})
 		.attr("y",function(d,i){
-			//////console.log(h));
+			////////(h));
 			//horizontal bars:
 			return (yScale(i));
 			//vertical bars
 			//return h-p-yScale(+d.CurrentPatients);
 		})
 		.attr("width",function(d){
-			//////console.log(h-yScale())
+			////////(h-yScale())
 			//used before for vertical
 			//return yScale(+d.CurrentPatients);
 			//horizontal: 
@@ -328,7 +328,7 @@ function updateASGraph(data)
 		})
 		.attr("height",yScale.rangeBand())
 		.attr("fill",function(d){
-			////console.log(+d.CurrentPatients + " Current Patients");
+			//////(+d.CurrentPatients + " Current Patients");
 			return colorBars(+d.CurrentPatients,+d.Beds,+d.Status);
 		});
 		
@@ -365,7 +365,7 @@ function updateMTGraph(data){
 	//so just update the bedsTaken field
 	//and the tooltip (probably?)
 	
-	////console.log("UPDATING MT");
+	//////("UPDATING MT");
 	//filter out to MT
 	var AidStations = [];
 	var MedicalTentsDataset =  data.filter(filterMedicalTents);
@@ -389,12 +389,12 @@ function updateMTGraph(data){
 		.transition()
 		//.transition()
 		.attr("width",function(d) {
-			////console.log(d.Location+" : "+d.CurrentPatients);
+			//////(d.Location+" : "+d.CurrentPatients);
 			return xScale(+d.CurrentPatients)-p;
 		});
-	////console.log(svg.selectAll(".bedstaken"));
+	//////(svg.selectAll(".bedstaken"));
 		
-	////console.log("Finished updating MT");
+	//////("Finished updating MT");
 	
 }
 
@@ -421,7 +421,7 @@ function updateDensity()
 		var minute = getMinute();
   
 		minute = minute - minute%minuteInterval;
-		////console.log(minute);
+		//////(minute);
 		var margin = 15;
 		var margins = {top: 20, right: 30, bottom: 30, left: 40};
 		    
@@ -431,7 +431,7 @@ function updateDensity()
           	.range([height-margins.bottom,2*margin]);
 		
 		var RaceData = data.filter(filterByMinute);
-		console.table(RaceData);
+		//.table(RaceData);
 		
 		  y.domain([0,d3.max(RaceData,function(d) {
     		return (parseInt((+d.Runners)/1000)+1)*1000;
@@ -458,7 +458,7 @@ function updateDensity()
 		var minute = getMinute();
   
 		minute = minute - minute%minuteInterval;
-		////console.log(minute);
+		//////(minute);
 		var margin = 15;
 		var margins = {top: 20, right: 30, bottom: 30, left: 40};
 		    
@@ -468,7 +468,7 @@ function updateDensity()
           	.range([height-margins.bottom,2*margin]);
 		
 		var RaceData = data.filter(filterByMinute);
-		console.table(RaceData);
+		//.table(RaceData);
 		
 		y.domain([0,yScaleBoth]);
 		// yScaleBoth = d3.max(RaceData,function(d) {return +d.Runners; });
@@ -497,71 +497,73 @@ function updateDensity()
 
 function updateGeneral(){
 	d3.csv("data/genInfo.csv",displayInfo);
-	// d3.csv("data/gen_info.csv",displayAlert);
+	d3.csv("simulation/DensitiesFull.csv",displayDrops);
+	d3.csv("data/Densities.csv",displayRunnerData);
+	//d3.csv("data/gen_info.csv",displayAlert);
 
 }
 
 // Docs at http://simpleweatherjs.com
-function displayWeather(data) {
-  var temp = data[0].temperature;
-  var windDirec = data[0].windDirection;
-  var windSpeed = data[0].windSpeed;
-  var humid = data[0].humidity;
-  var status = data[0].AlertStatus;
+// function displayWeather(data) {
+//   var temp = data[0].temperature;
+//   var windDirec = data[0].windDirection;
+//   var windSpeed = data[0].windSpeed;
+//   var humid = data[0].humidity;
+//   var status = data[0].AlertStatus;
 
-  $(document).ready(function() {
-    $.simpleWeather({
-      location: 'Houston, TX',
-      woeid: '',
-      unit: 'f',
-      success: function(weather) {
-        if (status==1)//alert level yellow 
-        {
-           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
-        }
+//   $(document).ready(function() {
+//     $.simpleWeather({
+//       location: 'Houston, TX',
+//       woeid: '',
+//       unit: 'f',
+//       success: function(weather) {
+//         if (status==1)//alert level yellow 
+//         {
+//           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
+//         }
         
-        else
-        {
-           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
-        }
+//         else
+//         {
+//           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
+//         }
 
-        html += '<ul><li>' +'Memorial Park</li>';
-        html += '<li class="currently">' + weather.humidity + '% RH</li>';
+//         html += '<ul><li>' +'Memorial Park</li>';
+//         html += '<li class="currently">' + weather.humidity + '% RH</li>';
         
-        if(windDirec=='N')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8595</li></ul>';
+//         if(windDirec=='N')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8595</li></ul>';
         
-        else if(windDirec=='E')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8592</li></ul>';
+//         else if(windDirec=='E')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8592</li></ul>';
         
-        else if(windDirec='S')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8593</li></ul>';
+//         else if(windDirec='S')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8593</li></ul>';
         
-        else if(windDirec=='W')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8594</li></ul>';
+//         else if(windDirec=='W')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8594</li></ul>';
         
-        else if(windDirec=='NE')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8601</li></ul>';
+//         else if(windDirec=='NE')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8601</li></ul>';
         
-        else if(windDirec=='NW')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8600</li></ul>';
+//         else if(windDirec=='NW')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8600</li></ul>';
         
-        else if(windDirec=='SE')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8598</li></ul>';
+//         else if(windDirec=='SE')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8598</li></ul>';
         
-        else if(windDirec=='SW')
-        html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8599</li></ul>';
+//         else if(windDirec=='SW')
+//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8599</li></ul>';
         
 
-        $("#weather").html(html);
-      },
-      error: function(error) {
-        $("#weather").html('<p>' + error + '</p>');
-      }
-    });
-  });
+//         $("#weather").html(html);
+//       },
+//       error: function(error) {
+//         $("#weather").html('<p>' + error + '</p>');
+//       }
+//     });
+//   });
 
-}
+// }
 
 
 
@@ -598,7 +600,7 @@ function updatePage(){
 	if (pageUpdate==120)
 	{
 		refreshPage();
-		////console.log("refresh!!!");
+		//////("refresh!!!");
 
 	}
 	

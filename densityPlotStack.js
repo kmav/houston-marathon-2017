@@ -8,7 +8,7 @@ function drawFullStack(data){
   var minute = getMinute();
   
   minute = minute - minute%minuteInterval;
-  console.log(minute);
+  //(minute);
  var margin = 15;
  var margins = {top: 20, right: 30, bottom: 30, left: 40};
     
@@ -28,7 +28,7 @@ function drawFullStack(data){
   //filter data to the one from this minute
 
   var RaceData =  data.filter(filterByMinute);
-  // console.table(RaceData);
+  // //.table(RaceData);
   
     //xscale
   var x = d3.scale.linear()
@@ -38,7 +38,7 @@ function drawFullStack(data){
     
   var barWidth = (x(3)-x(2));
   
-  console.log("Width is "+barWidth);
+  //("Width is "+barWidth);
   barWidth = (x(3)-x(2))*.6;
 
   y.domain([0,yScaleBoth]);

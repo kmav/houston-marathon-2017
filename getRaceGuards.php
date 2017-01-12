@@ -60,7 +60,7 @@
         echo $scraped_page;
         echo 'stop';
         
-        //console.log($scraped_page);
+        ////($scraped_page);
         
         echo 'start';
 

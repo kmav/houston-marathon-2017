@@ -12,7 +12,7 @@ function colorBars(current,beds,status){
 	//initial check for closed!
 	if (+status==2){
 		return "rgb(112,112,112)";
-		console.log("BLACK!!!");
+		//("BLACK!!!");
 	}
 	var percent = 100*(+current)/(+beds);
     if (percent >= 100) {
@@ -45,7 +45,7 @@ function colorBars(current,beds,status){
 
 function drawAidStations(data){
 
-	//console.table(data);
+	////.table(data);
 	//we only need the ones with attribute Aid Station
 	var AidStations = []
 
@@ -57,7 +57,7 @@ function drawAidStations(data){
 		AidStationDataset = data.filter(easyFilter);
 	}
 	
-	//console.table(AidStationDataset);
+	////.table(AidStationDataset);
 	//debugger;
 	//now we will plot this data with following:
 		//show rectangles with:
@@ -65,13 +65,13 @@ function drawAidStations(data){
 			//and use Comments or other stuff to figure out how full it is
 
 	AidStationDataset.reverse();
-	console.log(AidStationDataset[2].Location);
+	//(AidStationDataset[2].Location);
 
 	var w = document.getElementById('aidStation').offsetWidth *0.8 ;
 	var h = document.getElementById('aidStation').offsetHeight*0.8;
 	//padding
 	var p = 10;
-	console.log([w,h,p]);
+	//([w,h,p]);
 
 	//get the x scale 
 	/*var xScale = d3.scale.ordinal()
@@ -98,7 +98,7 @@ function drawAidStations(data){
 					.domain(d3.range(AidStationDataset.length))
 					//.domain([0,2])
 					.rangeRoundBands([h-p,2*p],0.15);
-	console.log(yScale(1));
+	//(yScale(1));
 	//set the y scale for %
 	/*
 	var yScale = d3.scale.linear()
@@ -126,8 +126,8 @@ function drawAidStations(data){
 	}
 
 	var ySpacing = (yScale(2)-yScale(1))/2;
-	console.log(yScale(2));
-	console.log(ySpacing);
+	//(yScale(2));
+	//(ySpacing);
 	
 	//now create the svg to hold things in 
 	var svg = d3.select("#aidStation")
@@ -159,7 +159,7 @@ function drawAidStations(data){
 	.style("font-size", function(d){
 			return ((yScale.rangeBand()*0.75))+'px';
 		});
-	console.log("Made");
+	//("Made");
 
 	//add y axis
 	/*svg.append("g")
@@ -192,12 +192,12 @@ function drawAidStations(data){
 					return p;
 				})
 				.attr("y",function(d){
-					//console.log(h));
+					////(h));
 					return (yScale(+d.Beds));
 					//return h-p-yScale(+d.CurrentPatients);
 				})
 				.attr("width",function(d){
-					//console.log(h-yScale())
+					////(h-yScale())
 					//return yScale(+d.CurrentPatients);
 					return (xScale(+d.Beds));
 					
@@ -215,13 +215,13 @@ function drawAidStations(data){
 					return p;
 				})
 				.attr("y",function(d,i){
-					//console.log(h));
-					console.log(yScale(i));
+					////(h));
+					//(yScale(i));
 					return (yScale(i));
 					//return h-p-yScale(+d.CurrentPatients);
 				})
 				.attr("width",function(d){
-					//console.log(h-yScale())
+					////(h-yScale())
 					//return yScale(+d.CurrentPatients);
 					return (xScale(+d.Beds)-xScale(0));
 				})
@@ -237,13 +237,13 @@ function drawAidStations(data){
 					return p;
 				})
 				.attr("y",function(d,i){
-					//console.log(h));
-					console.log(yScale(i));
+					////(h));
+					//(yScale(i));
 					return (yScale(i));
 					//return h-p-yScale(+d.CurrentPatients);
 				})
 				.attr("width",function(d){
-					//console.log(h-yScale())
+					////(h-yScale())
 					//used before for vertical
 					//return yScale(+d.CurrentPatients);
 					//horizontal: 
@@ -261,7 +261,7 @@ function drawAidStations(data){
 					var xPosition = xOffset + parseFloat(d3.select(this).attr("x"));
 					//var yPosition = Number(d3.select(this).attr("y")); //+ h/2;
 					var yPosition = parseFloat(d3.select(this).attr("y"))+yOffset; //+ h/2;
-					console.log("POSITION OF TOOLTIP!: "+xPosition, yPosition);
+					//("POSITION OF TOOLTIP!: "+xPosition, yPosition);
 					d3.select("#tooltip")
 						.style("left", xPosition + "px")
 						.style("top", yPosition + "px")
@@ -305,7 +305,7 @@ function drawAidStations(data){
 							});
 					});
 					
-		console.log(bars);			
+		//(bars);			
 		svg.selectAll(".totalbeds")
 		.attr("fill","rgba(0,0,0,0.4)");
 		
@@ -315,7 +315,7 @@ function drawAidStations(data){
 	
 	//figure out what the spacing is between each item
 	//add the text that says what aid station number
-	// console.log("putting new data");
+	// //("putting new data");
 
 	
 	
@@ -324,7 +324,7 @@ function drawAidStations(data){
 		
 	svg.selectAll(".bedstaken")
 		.attr("fill",function(d){
-			console.log(d.Status);
+			//(d.Status);
 			
 			//figure out colors based on total beds and current beds
 			return colorBars(+d.CurrentPatients,+d.Beds,+d.Status);
@@ -368,7 +368,7 @@ function drawAidStations(data){
 //add title
 
 	
-console.log("Hi here it is");
+//("Hi here it is");
 //call the function to draw the aid station chart
 d3.csv('data/AidStations.csv',drawAidStations);
 

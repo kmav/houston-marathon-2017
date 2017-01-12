@@ -45,8 +45,8 @@ function InsertDisplay(){
     .attr("class","checkBox")
     .attr("type","checkbox")
     .property("checked",function(d){
-        console.table(d);
-        console.log(d.Location+":"+d.Display);
+        //.table(d);
+        //(d.Location+":"+d.Display);
         return +d.Display==1;
     });
     
@@ -73,12 +73,12 @@ function InsertDisplay(){
 var w=1000;
 var h=500;
 
-console.log(Stations);
+//(Stations);
 // var AidStations = Stations.filter(selectOnlyAS);
 AidStations = Stations;
-console.log(AidStations);
+//(AidStations);
 // AidStations is the array loaded from php (from database)
-console.table(AidStations);
+//.table(AidStations);
 
     // select input form (doesnt' exist yet)
 var AidBoxes = d3.select(".inputform")

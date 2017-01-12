@@ -214,20 +214,20 @@
         $txt = $txt.$pSeen.",";
         
         $txt = $txt."\"".$alert."\",";
-        $txt = $txt.$latLM.",";
-        $txt = $txt.$longLM.",";
-        $txt = $txt.$latLF.",";
-        $txt = $txt.$longLF.",";
+        // $txt = $txt.$latLM.",";
+        // $txt = $txt.$longLM.",";
+        // $txt = $txt.$latLF.",";
+        // $txt = $txt.$longLF.",";
         
-        $txt = $txt.$latLMH.",";
-        $txt = $txt.$longLMH.",";
-        $txt = $txt.$latLFH.",";
-        $txt = $txt.$longLFH.",";
+        // $txt = $txt.$latLMH.",";
+        // $txt = $txt.$longLMH.",";
+        // $txt = $txt.$latLFH.",";
+        // $txt = $txt.$longLFH.",";
 
-        $txt = $txt.$latLWM.",";
-        $txt = $txt.$longLWM.",";
-        $txt = $txt.$latLWF.",";
-        $txt = $txt.$longLWF.",";
+        // $txt = $txt.$latLWM.",";
+        // $txt = $txt.$longLWM.",";
+        // $txt = $txt.$latLWF.",";
+        // $txt = $txt.$longLWF.",";
 
         $txt = $txt.$lat350.",";
         $txt = $txt.$long350.",";

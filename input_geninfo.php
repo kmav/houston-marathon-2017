@@ -250,7 +250,7 @@ session_start(); // Starting Session
          var AlertLong = data[0].AlertLong;
          var shelterDisplay = data[0].shelterDisplay;
         var message=data[0].Alert;
-        console.log(message+"alert");
+        //(message+"alert");
         document.getElementById('alert_saved').value=message;
         //get the true/false of the check for the emergency
         if (check==1){

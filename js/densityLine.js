@@ -6,7 +6,7 @@ function draw(data){
    var minute = getMinute();
   
   minute = minute - minute%minuteInterval;
-  console.log(minute);
+  //(minute);
   
   var margin = 15;
   var width = $("#densityPlot").width()-margin;
@@ -24,8 +24,8 @@ function draw(data){
        
     var now = String(minute);
     var later = String(minute+30);
-    console.log(now);
-    console.log(later);
+    //(now);
+    //(later);
     var datum = dimple.filterData(data,"Minute",[now,later])
     var myChart = new dimple.chart(svg,datum);
     var x = myChart.addCategoryAxis("x","Mile");

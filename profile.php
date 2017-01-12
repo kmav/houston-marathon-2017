@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>2016 Houston Marathon - Home Page</title>
+<title>2017 Houston Marathon - Home Page</title>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
 
 <link href="css/styled_login.css" rel="stylesheet" type="text/css">

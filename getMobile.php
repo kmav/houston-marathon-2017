@@ -255,7 +255,7 @@ function updateClock()
 
 	//make sure we're on the right timezone
 	var offset = currentTime.getTimezoneOffset();
-	//console.log(offset);
+	////(offset);
 	var difference = offset ;
 
 	currentTime = new Date(currentTime.getTime());// - difference*60000);
@@ -310,7 +310,7 @@ function updateClock()
 
 	var elapsedTimeString = elapsedHours + ":"+ elapsedMinutes+":"+elapsedSeconds;
 	document.getElementById('elapsedTime').firstChild.nodeValue = elapsedTimeString;
-	console.log(elapsedTimeString)
+	//(elapsedTimeString)
 }
 
 ////////////////////////////MAIN UPDATE OF THE PAGE
