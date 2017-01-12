@@ -1,12 +1,12 @@
-var timeMultiplier=1;
+var timeMultiplier=2;
 var mapRefresh = 0;
 var graphRefresh = 0;
 var trackersRefresh = 0;
 var pageUpdate = 0;
 var densityUpdate = 0;
 
-var startHour = 0;
-var startMinute = 0;
+var startHour = 20;
+var startMinute = 10;
 
 var yScaleBoth = 0;
 
