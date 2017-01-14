@@ -5,8 +5,8 @@ var trackersRefresh = 0;
 var pageUpdate = 0;
 var densityUpdate = 0;
 
-var startHour = 9;
-var startMinute = 0;
+var startHour = 8;
+var startMinute = 30;
 
 var yScaleBoth = 0;
 
