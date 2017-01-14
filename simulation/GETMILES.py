@@ -9,7 +9,8 @@ import sys
 
 groupedNumber = 10
 minuteInterval=2
-con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+#con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 

@@ -141,7 +141,6 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
 			        <p>1000-2000 <span class="boxes yellow"> </p>
 			        <p>2000-3000 <span class="boxes orange"> </p>
 			        <p>3000+ <span class="boxes red"> </p>
-				<p> Markers: </p>
 				<p> Miles <span class="circles purple"></span></p>
 				<p> Aid Stations <span class="circles green"></span></p>			
 				<p> AS (Closed) <span class="circles gray"></span></p>

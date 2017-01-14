@@ -9,7 +9,8 @@ import sys
 
 #con = mdb.connect(host='localhost',user='bpeynetti',db='c9')
 #con = mdb.connect(host='bpeynetti-chicagomarathon2015-1689696', user='bpeynetti', db='c9')
-con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+#con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 #connections
