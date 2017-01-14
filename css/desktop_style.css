@@ -31,7 +31,7 @@ body,html{
 }
 .yellow
 {
-  background-color:#e0dd26;
+  background-color:#ffe700;
 }
 .orange
 {
@@ -45,6 +45,14 @@ body,html{
 .purple
 {
   background-color: rgba(102,4,140,.9);
+}
+.pacersBlue
+{
+  background-color: rgba(58,153,222,.9);
+}
+.raceGuardsRed
+{
+  background-color: #B50015;
 }
 .gray
 {
@@ -303,7 +311,7 @@ i {
 }
 
 #runners_box{
-  width: 85%;
+  width: 65%;
   float: right;
   margin-top: 5%;
   border: 1px solid white;
@@ -328,10 +336,11 @@ i {
 #legendBox p{
 	font-family: Lato, Helvetica, sans-serif;
 	color:black;
-	font-size: 2.1vh;
+	font-size: 3vh;
   line-height:1.1;
 	margin-left:30%;
 	font-weight: normal;
+	text-align: left;
 }
 
 #legendBox h5{
@@ -346,11 +355,13 @@ i {
 #legendBox .boxes {
 	margin-top: 5px;
 	margin-left: 15px;
+	margin-right: 10px;
 	position: absolute;
-	width: 30px;
-	height: 10px;
+	width: 40px;
+	height: 12px;
 	text-align: right;
 	border-radius: 5px;
+	border: 1px black solid;
 
 }
 
@@ -387,7 +398,7 @@ i {
 }
 
   .axis text {
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
   
   .grid .tick {
@@ -558,11 +569,6 @@ i {
     margin: 0 0 0 0;
     padding:5px;
   }
-   #densityLegend{
-    position:relative;
-    text-align: left;
-    font-size: .7vw;
-  }
 
   .refreshButton{
     margin-top:8%;
@@ -597,7 +603,7 @@ i {
   }
   
   .icon-sf {
-    background: rgba(58, 153, 222, 0.9);
+    background: #B50015;
   }
   
   .icon-hm{
@@ -640,7 +646,7 @@ i {
 #map_legend p{
 	font-family: Lato, Helvetica, sans-serif;
 	color:white;
-	font-size: 1.5vh;
+	font-size: 1.7vh;
 	text-align: right;
 	margin-bottom: 1%;
 }
@@ -678,4 +684,38 @@ body {
 
 #legendBox{
   margin-left: 5%;
+}
+
+#densityLegend{
+    position: absolute;
+    top: 72%;
+    right: 25%;
+    text-align:left;
+}
+
+#densityLegend{
+  font-size: 0.7em;
+}
+
+#densityLegend .boxes {
+  margin-right: 10px;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 1px;
+
+}
+
+#densityLegend p {
+  margin-left: 15px;
+  margin-top: -6px;
+
+}
+
+.halfMarathonPurple {
+  background:#A56FBF;;
+}
+
+.marathonPurple {
+  background:#460061;
 }

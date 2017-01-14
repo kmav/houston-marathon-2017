@@ -103,7 +103,7 @@ function drawFull(data){
     
   chart.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + (height-margins.bottom+3) + ")")
+    .attr("transform", "translate(0," + (height-margins.bottom+7) + ")")
     .call(xAxis);
 
     
@@ -203,7 +203,7 @@ function drawHalf(data){
     
   chart.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + (height-margins.bottom+3) + ")")
+    .attr("transform", "translate(0," + (height-margins.bottom+7) + ")")
     .call(xAxis);
 
     

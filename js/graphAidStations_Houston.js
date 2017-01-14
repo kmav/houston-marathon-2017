@@ -7,33 +7,41 @@ function easyFilter(obj){
 	return ((obj.Type=="AS"))&&(+obj.Status<=2);
 }
 
+/*var sortOrder = false;
+var sortItems = function(a,b){
+	if (sortOrder){
+		return +a.Location - +b.Location;
+	}
+	return +b.Location - +a.Location;
+}*/
+
 function colorBars(current,beds,status){
 	
 	//initial check for closed!
-	if (+status==2){
-		return "rgb(112,112,112)";
-		//("BLACK!!!");
-	}
+	var r, g, b;
 	var percent = 100*(+current)/(+beds);
     if (percent >= 100) {
         percent = 99
     }
-    var r, g, b;
+	if (+status==2){
+		return "rgb(112,112,112)";
+		//("BLACK!!!");
+	}
 
-    if (percent < 50) {
-        // green to yellow
-        r = 11;
-        g = 181;
-        b = 11;
+    else if (percent < 50) {
+        // green
+        r = 0;
+        g = 153;
+        b = 51;
 		
     } else if (percent < 90) {
-        // yellow to red
+        // yellow
         r = 255;
-        g = 220;
+        g = 230;
         b = 0;
     }
     
-    else {
+    else { //red
     	r = 255;
     	g = 0;
     	b = 0;
@@ -51,7 +59,7 @@ function drawAidStations(data){
 
 	//filter aid station if it's an Aid Station
 	var AidStationDataset =  data.filter(filterAidStations);
-	
+	console.table(AidStationDataset);
 	if (AidStationDataset.length<3){
 		//use another filter to select the first three or something
 		AidStationDataset = data.filter(easyFilter);
@@ -248,7 +256,7 @@ function drawAidStations(data){
 					//return yScale(+d.CurrentPatients);
 					//horizontal: 
 					if (+d.Status==2){
-						return (xScale(+d.Beds)-p);
+						return 0;
 					}
 					else{
 						return (xScale(+d.CurrentPatients)-p);
@@ -286,7 +294,7 @@ function drawAidStations(data){
 							return (xScale(0));
 						})
 						.attr("width", function(d) {
-							return (xScale(+d.CurrentPatients) + Popup);
+							return (xScale(+d.CurrentPatients));
 						});
 					})
 					.on("mouseout", function() {
@@ -301,7 +309,7 @@ function drawAidStations(data){
 								return (xScale(0));
 							})
 							.attr("width", function(d) {
-								return (xScale(+d.CurrentPatients) - xScale(0) - Popup);
+								return (xScale(+d.CurrentPatients) - p);
 							});
 					});
 					

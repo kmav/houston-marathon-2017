@@ -759,6 +759,7 @@ var geojson = [
       },
       "properties": {
         "icon": {
+          "title": "9Half",
           "className": "my-icon icon-hm1", // class name to style
           "html": "9H", // add content inside the marker
           "iconSize": null // size of icon, use null to set the size in CSS

@@ -9,7 +9,7 @@ echo "
 ";
 //if ($mobile==true){
     
-    echo "<li class='actives'><a class='link' href='getMobile.php'>Mobile Version</a></li>";
+    //echo "<li class='actives'><a class='link' href='getMobile.php'>Mobile Version</a></li>";
 //}
 //else {
     echo "

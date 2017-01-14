@@ -117,15 +117,18 @@
         */
         
         //ID FOR TRACKERS
-        $leadF = 8880420988;
-        $leadM = 8880420989;
-        $leadFH = 8880420990;
-        $leadMH = 8880420991;
+        $leadF = 8880320574;
+        $leadM = 8880320575;
+        $turtle = 8880323596;
+        $leadFH = 8880320580;
+        $leadMH = 8880320581;
         $leadWM = 8880420993;
-        $pace350 = 8880420994;
-        $pace400 = 8880420995;
-        $pace415 = 8880420996;
-        $pace500 = 8880420997;
+        $pace350 = 8880120781;
+        $pace400 = 8880120782;
+        $pace415 = 8880120783;
+        $pace430 = 8880120784
+        $pace500 = 8880120785;
+        $pace515 = 8880120786;
         $pace530 = 8880420998;
         $pace600 = 8880420999;
         
@@ -184,6 +187,10 @@
                             $latLM = $lat;
                             $longLM = $lon;
                             break;
+                        case $turtle:
+                            $latTurtle = $lat;
+                            $longTurtle = $lon;
+                            break;
                         case $leadWM:
                             $latLWM = $lat;
                             $longLWM = $lon;
@@ -215,10 +222,18 @@
                             $long415 = $lon;
                             echo " - Pace 415 hours $lat415 $long415";
                             break;
+                        case $pace430:
+                            $lat430= $lat;
+                            $long430 = $lon;
+                            break;
                         case $pace500:
                             echo " - Pace 5 hours $lat $lon";
                             $lat500= $lat;
                             $long500 = $lon;
+                            break;
+                        case $pace515:
+                            $lat515= $lat;
+                            $long515 = $lon;
                             break;
                         case $pace530:
                             echo " - Pace 530 hours $lat $lon";
@@ -253,7 +268,7 @@
             LeadMaleLatHalf, LeadMaleLongHalf, LeadFemaleLatHalf, LeadFemaleLongHalf,
             LeadWheelchairMaleLat,LeadWheelchairMaleLong, LeadWheelchairFemaleLat, LeadWheelchairFemaleLong,
             pace350Lat, pace350Long, pace400Lat, pace400Long,
-            pace415Lat, pace415Long, pace500Lat, pace500Long, 
+            pace415Lat, pace415Long, pace430Lat, pace430Long, pace500Lat, pace500Long, pace515Lat, pace515Long,
             pace530Lat, pace530Long, pace600Lat, pace600Long,
             Alert,emergencyCheck, AlertLat, AlertLong,shelterDisplay)
             VALUES (
@@ -289,8 +304,12 @@
                 ".$long400.",
                 ".$lat415.",
                 ".$long415.",
+                ".$lat430.",
+                ".$long430.",
                 ".$lat500.",
                 ".$long500.",
+                ".$lat515.",
+                ".$long515.",
                 
                 ".$lat530.",
                 ".$long530.",
@@ -317,10 +336,10 @@
         
         $txt = "AlertStatus,temperature,windSpeed,windDirection,humidity,";
         $txt = $txt."runnersOnCourse,runnersFinished,hospitalTransports,patientsSeen,";
-        $txt = $txt."LeadMaleRunnerLat,LeadMaleRunnerLong,LeadFemaleRunnerLat,LeadFemaleRunnerLong,";
+        $txt = $txt."LeadMaleRunnerLat,LeadMaleRunnerLong,LeadFemaleRunnerLat,LeadFemaleRunnerLong,TurtleLat,TurtleLong,";
         $txt = $txt."LeadMaleRunnerLatHalf,LeadMaleRunnerLongHalf,LeadFemaleRunnerLatHalf,LeadFemaleRunnerLongHalf,";
         $txt = $txt."LeadWheelchairMaleLat,LeadWheelchairMaleLong,LeadWheelchairFemaleLat,LeadWheelchairFemaleLong,";
-        $txt = $txt."pace350Lat,pace350Long,pace400Lat,pace400Long,pace415Lat,pace415Long,pace500Lat,pace500Long,pace530Lat,pace530Long,pace600Lat,pace600Long,Alert,emergencyCheck,AlertLat,AlertLong,shelterDisplay\n";
+        $txt = $txt."pace350Lat,pace350Long,pace400Lat,pace400Long,pace415Lat,pace415Long,pace430Lat,pace430Long,pace500Lat,pace500Long,pace515Lat,pace515Long,pace530Lat,pace530Long,pace600Lat,pace600Long,Alert,emergencyCheck,AlertLat,AlertLong,shelterDisplay\n";
         
         $txt = $txt.$alertStatus.",";
         $txt = $txt.$temperature.",";
@@ -336,6 +355,8 @@
         $txt = $txt.$longLM.",";
         $txt = $txt.$latLF.",";
         $txt = $txt.$longLF.",";
+        $txt = $txt.$latTurtle.",";
+        $txt = $txt.$longTurtle.",";
         
         $txt = $txt.$latLMH.",";
         $txt = $txt.$longLMH.",";
@@ -353,8 +374,12 @@
         $txt = $txt.$long400.",";
         $txt = $txt.$lat415.",";
         $txt = $txt.$long415.",";
+        $txt = $txt.$lat430.",";
+        $txt = $txt.$long430.",";
         $txt = $txt.$lat500.",";
         $txt = $txt.$long500.",";
+        $txt = $txt.$lat515.",";
+        $txt = $txt.$long515.",";
         $txt = $txt.$lat530.",";
         $txt = $txt.$long530.",";
         $txt = $txt.$lat600.",";

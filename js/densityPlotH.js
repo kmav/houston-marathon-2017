@@ -1,9 +1,0 @@
-
-
-
-
-
-var minuteInterval = 2;
-
-
-

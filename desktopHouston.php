@@ -28,7 +28,7 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
     <meta charset=utf-8 />
     <title>Chevron Houston Marathon</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    <script src="js/dimple.js"></script>
+    
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -145,6 +145,8 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
 				<p> Miles <span class="circles purple"></span></p>
 				<p> Aid Stations <span class="circles green"></span></p>			
 				<p> AS (Closed) <span class="circles gray"></span></p>
+				<p> Race Guards <span class="circles raceGuardsRed"></span></p>
+				<p> GPS Pacers <span class="circles pacersBlue"></span></p>
 	           </div>
 	
                 </div>
@@ -198,36 +200,31 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
                             <div class='col-sm-5 full' id='densityPlotH'>
                                  <svg id='halfChart'></svg>
                                  
-                            </div>          
+                            </div>      
                             
-                        </div>
+                            <div id="densityLegend">
+        
+                                <div class='col-sm-4 full'>
+                                               <span class="boxes halfMarathonPurple"></span><p>Half marathon</p>
+                                </div>
+                                <div class='col-sm-4 full'>
+                                               <span class="boxes marathonPurple"></span><p>Full marathon</p>
+                                </div>
+                            </div>
+                            
+                    </div>
+                    
+                    
                     </div>
 
 
                     
                     
-                    <div class='row' style="margin:0; padding:0" >
-                        <div class='legend'>
-                        <div class='densityLegend legend-scale'>
-                        <ul class='legend-labels'>
 
-                        <div class='col-sm-5 full'>
-                                        <li><span style='background:#A56FBF;'></span>Half marathon</li>
-                        </div>
-                        <div class='col-sm-5 full'>
-                                        <li><span style='background:#460061;'></span>Full marathon</li>
-                        </div>
-                         </ul>
-                        </div>
-                        </div><!--end legend class-->
-                    </div>
-                    
-                    
-                    </div>
                     
                     
                     <script src='js/densityPlot.js' type='text/javascript'></script>
-                    <script src='js/densityPlotH.js' type='text/javascript'></script>
+
                 </div>
                 <!--end 7 col div for sidebar-->
                 </div>

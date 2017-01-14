@@ -1,3 +1,7 @@
+/* global getMinute */
+/* global map */
+/* global d3 */
+
 var alertMarker=0;
 var currentDrops=0;
 var currentStarted=0;
@@ -42,33 +46,6 @@ function displayInfo(data){
     var message = data[0].Alert;
     var shelterDisplay = data[0].shelterDisplay;
     
-    // console.log(message);
-    // console.log(shelterDisplay);
-    // console.log(AlertLat);
-    // console.log(1);
-    //("SHELTER DISPLAY::::: "+shelterDisplay);
-    
-    //display runners finished
-    /*d3.select("#RunnersOnCourse")
-    .text("On Course: " + run);
-    
-    d3.select("#RunnersFinished")
-    .text("Finished: " + runnersFinished);
-    */
-    /*d3.select("#RunnersOnCourse")
-    .text(run);
-    
-    d3.select("#RunnersFinished")
-    .text(runnersFinished);
-    
-    
-    d3.select("#HospitalTransports")
-    .text("Hospital Transports: " + hospitalTransports);
-    
-    d3.select("#PatientsSeen")
-    .text("Treatments: " + totalTreatments);
-    */
-    //(hospitalTransports+" transports");
     
     d3.select("#HospitalTransports")
     .text("Hospital Transports: " + hospitalTransports);
@@ -308,7 +285,7 @@ if (shelterDisplay==1){
     
 }
 
-d3.csv("simulation/DensitiesFull.csv",displayDrops);
+//d3.csv("simulation/DensitiesFull.csv",displayDrops);
 d3.csv("data/Densities.csv",displayRunnerData);
 d3.csv("data/genInfo.csv",displayInfo);
 

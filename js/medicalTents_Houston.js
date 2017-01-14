@@ -12,14 +12,14 @@ function colorBars(current,beds){
 
     if (percent < 50) {
         // green to yellow
-        r = 11;
-        g = 181;
-        b = 1;
+        r = 0;
+        g = 153;
+        b = 51;
 
     } else if (percent < 90) {
         // yellow to red
         r = 255;
-        g = 220;
+        g = 230;
         b = 0;
     }
     
@@ -221,7 +221,7 @@ function drawMedicalTents(data){
 							return (xScale(0));
 						})
 						.attr("width", function(d) {
-							return (xScale(+d.CurrentPatients) + Popup);
+							return (xScale(+d.CurrentPatients));
 						});
 					})
 				.on("mouseout",function(){
@@ -236,7 +236,7 @@ function drawMedicalTents(data){
 								return (xScale(0));
 							})
 							.attr("width", function(d) {
-								return (xScale(+d.CurrentPatients) - xScale(0) - Popup);
+								return (xScale(+d.CurrentPatients) - p);
 							});	
 				})
 		

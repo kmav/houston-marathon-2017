@@ -1,12 +1,12 @@
-var timeMultiplier=2;
+var timeMultiplier=1;
 var mapRefresh = 0;
 var graphRefresh = 0;
 var trackersRefresh = 0;
 var pageUpdate = 0;
 var densityUpdate = 0;
 
-var startHour = 20;
-var startMinute = 10;
+var startHour = 9;
+var startMinute = 0;
 
 var yScaleBoth = 0;
 
@@ -45,7 +45,7 @@ function colorBars(current,beds,status){
     } else if (percent < 90) {
         // yellow to red
         r = 255;
-        g = 220;
+        g = 255;
         b = 0;
     }
     
@@ -62,13 +62,13 @@ var key = function(d){
 	return +d.Location;
 }
 
-var sortOrder = false;
-var sortItems = function(a,b){
-	if (sortOrder){
-		return +a.Location - +b.Location;
-	}
-	return +b.Location - +a.Location;
-}
+//var sortOrder = false;
+//var sortItems = function(a,b){
+//	if (sortOrder){
+//		return +a.Location - +b.Location;
+//	}
+//	return +b.Location - +a.Location;
+//}
 
 
 function filterByMinute(obj){
@@ -188,6 +188,7 @@ function updateMaps()
 function updateTrackers()
 {
 	runnerTracking();
+	raceGuardTracking();
 }
 
 
@@ -207,10 +208,11 @@ function updateASGraph(data)
 	}
 	
 	AidStationDataset.reverse();
+	console.table(AidStationDataset)
 	//AidStationDataset = AidStationDataset.slice(0,AidStationDataset.length)
 	
 	var w = document.getElementById('aidStation').offsetWidth *0.8 ;
-	var h = document.getElementById('aidStation').offsetHeight*0.77;
+	var h = document.getElementById('aidStation').offsetHeight*0.8;
 	
 	var p = 10;
 	
@@ -221,7 +223,7 @@ function updateASGraph(data)
 						return +d.Beds;
 					})])
     	.range([p,w-p]);
-    	
+    
    	var yScale = d3.scale.ordinal()
 		.domain(d3.range(AidStationDataset.length))
 		.rangeRoundBands([h-p,2*p],0.15);
@@ -257,7 +259,7 @@ function updateASGraph(data)
 	var text = svg.selectAll(".text_bar")
 		.data(AidStationDataset,key);
 	
-	
+	console.table(AidStationDataset);
 	bars.exit()
 		.remove();
 		
@@ -281,7 +283,7 @@ function updateASGraph(data)
 		.attr("class","text_bar");
 	
 	totalbeds = svg.selectAll(".totalbeds")
-		.sort(sortItems)
+//		.sort(sortItems)
 		.transition()
 		.attr("x",function(d,i){
 			return p;
@@ -302,7 +304,7 @@ function updateASGraph(data)
 		.attr("fill","rgba(0,0,0,0.2)")
 
 	bars = svg.selectAll(".bedstaken")
-		.sort(sortItems)
+//		.sort(sortItems)
 		.transition()
 		.attr("x",function(d,i){
 					return p;
@@ -320,7 +322,7 @@ function updateASGraph(data)
 			//return yScale(+d.CurrentPatients);
 			//horizontal: 
 			if (+d.Status==2){
-				return (xScale(+d.Beds)-p);
+				return 0;
 			}
 			else{
 				return (xScale(+d.CurrentPatients)-p);
@@ -370,9 +372,9 @@ function updateMTGraph(data){
 	var AidStations = [];
 	var MedicalTentsDataset =  data.filter(filterMedicalTents);
 	
-	if (MedicalTentsDataset.length<3){
+	/*if (MedicalTentsDataset.length<3){
 		MedicalTentsDataset = data.filter(easyFilter);
-	}
+	}*/
 	
 	var svg = d3.select("#MT_graph")
 	var p = 10;
@@ -500,72 +502,9 @@ function updateGeneral(){
 	d3.csv("simulation/DensitiesFull.csv",displayDrops);
 	d3.csv("data/Densities.csv",displayRunnerData);
 	//d3.csv("data/gen_info.csv",displayAlert);
-
 }
 
-// Docs at http://simpleweatherjs.com
-// function displayWeather(data) {
-//   var temp = data[0].temperature;
-//   var windDirec = data[0].windDirection;
-//   var windSpeed = data[0].windSpeed;
-//   var humid = data[0].humidity;
-//   var status = data[0].AlertStatus;
-
-//   $(document).ready(function() {
-//     $.simpleWeather({
-//       location: 'Houston, TX',
-//       woeid: '',
-//       unit: 'f',
-//       success: function(weather) {
-//         if (status==1)//alert level yellow 
-//         {
-//           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
-//         }
-        
-//         else
-//         {
-//           html = '<h2 style="color:black"><i class="icon-' + weather.code + '" style="color:black"></i> ' + temp + '&deg;' + ' WBGT' + '</h2>';
-//         }
-
-//         html += '<ul><li>' +'Memorial Park</li>';
-//         html += '<li class="currently">' + weather.humidity + '% RH</li>';
-        
-//         if(windDirec=='N')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8595</li></ul>';
-        
-//         else if(windDirec=='E')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8592</li></ul>';
-        
-//         else if(windDirec='S')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8593</li></ul>';
-        
-//         else if(windDirec=='W')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8594</li></ul>';
-        
-//         else if(windDirec=='NE')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8601</li></ul>';
-        
-//         else if(windDirec=='NW')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8600</li></ul>';
-        
-//         else if(windDirec=='SE')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8598</li></ul>';
-        
-//         else if(windDirec=='SW')
-//         html += '<li class="wind" style="text-transform: uppercase;"> '+ weather.wind.speed + ' MPH &#8599</li></ul>';
-        
-
-//         $("#weather").html(html);
-//       },
-//       error: function(error) {
-//         $("#weather").html('<p>' + error + '</p>');
-//       }
-//     });
-//   });
-
-// }
-
-
+updateGeneral();
 
 ////////////////////////////MAIN UPDATE OF THE PAGE
 function updatePage(){
