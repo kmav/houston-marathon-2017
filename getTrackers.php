@@ -332,7 +332,7 @@
         
         $db->close();
         
-        $myfile = fopen("data/gen_info.csv","w") or die("Error opening file");
+        $myfile = fopen("data/gen_trackers.csv","w") or die("Error opening file");
         
         $txt = "AlertStatus,temperature,windSpeed,windDirection,humidity,";
         $txt = $txt."runnersOnCourse,runnersFinished,hospitalTransports,patientsSeen,";

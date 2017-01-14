@@ -43,7 +43,8 @@
         }
         
         else {
-            echo "<a href='desktopHouston.php'><div class='pagelink'>Main Display </div></a>";
+            echo "<a href='desktopHouston.php'><div class='pagelink'>Main Display</div></a>";
+            echo "<a href='instructions.php'><div class='pagelink'>Instruction Page</div></a>";
         }
         //echo "<a href='command.php'><div class='pagelink'>Forward Command Display </div></a>";
         //echo "<a href='getMobile.php'><div class='pagelink'>Mobile Version</div></a>";

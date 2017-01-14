@@ -501,7 +501,7 @@ function updateGeneral(){
 	d3.csv("data/genInfo.csv",displayInfo);
 	d3.csv("simulation/DensitiesFull.csv",displayDrops);
 	d3.csv("data/Densities.csv",displayRunnerData);
-	//d3.csv("data/gen_info.csv",displayAlert);
+	//d3.csv("data/genInfo.csv",displayAlert);
 }
 
 updateGeneral();

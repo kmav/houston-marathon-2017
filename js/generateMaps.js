@@ -379,7 +379,7 @@ function runnerTracking(){
       //plot runner tracking on map
       
       var runLoc = [];
-      d3.csv("data/gen_info.csv", function(d) {
+      d3.csv("data/gen_trackers.csv", function(d) {
           // Add a LatLng object to each item in the dataset
           //.table(d);
           //("Here is the tracking data:");

@@ -8,7 +8,8 @@ import sys
 ### mysql connection
 
 #con = mdb.connect(host='localhost',user='bpeynetti',db='c9')
-con = mdb.connect(host='bpeynetti-chicagomarathon2015-1689696', user='bpeynetti', db='c9')
+#con = mdb.connect(host='bpeynetti-chicagomarathon2015-1689696', user='bpeynetti', db='c9')
+con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 #connections
@@ -244,7 +245,7 @@ def main():
 	#calculate the differences 
 	for i in range(len(realSegment)-2):
 		realSegment[i] = realData[i] - realData[i+1]
-		realSegment[9] = ######################
+		#realSegment[9] = 0######################
 
 	##now simulation data
 	simData = [0]*11
@@ -444,8 +445,9 @@ def main():
 			moving = -1*moving
 			
 			ahead_sorted = sorted(ahead, key=lambda runner: runner['position']) #sort increasing
-			
-			for i in range(moving):
+			print len(ahead_sorted), moving
+			#print ahead_sorted
+			for i in min(range(len(ahead_sorted)),range(moving)):
 				#move those to the beginning
 				ahead_sorted[i]['position'] = s*5.00-.001
 				moved.append(ahead_sorted[i])
