@@ -224,6 +224,7 @@ function plotAS(update){
                     }
                 });
                 //create red marker
+            
             }
             
             //at the end so you don't keep overlaying images (Aid Station Feature Layer)

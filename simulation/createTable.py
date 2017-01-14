@@ -84,7 +84,7 @@ def GenerateRunners(number_runners):
         startInterval[i] = float(each[4])
         i+=1
     
-    corralCum = [0]*4
+    corralCum = [0]*5
     corralCum[0]=1
     corralCum[1]=1
     print "Number:",number_runners
@@ -94,10 +94,10 @@ def GenerateRunners(number_runners):
         corralNum = 0
         pct = 0
         #print percentage[corralNum]
-        while (float(percentage[corralNum]) < float(randNum) and corralNum<5):
+        while (float(percentage[corralNum]) < float(randNum) and corralNum<6):
             #decide which one to put by looping on increasing number of corrals
             corralNum+=1
-            #print corralNum,
+            print corralNum,
         # keeps track of how many runners are in each corral
         corralCum[corralNum]+=1
         
@@ -123,7 +123,7 @@ def GenerateRunners(number_runners):
     
     #here, we would assign starting times to the fastest first and then the slow people
     #now assign to each of the runners a time
-    corralNumDone = [0]*4
+    corralNumDone = [0]*5
     for i in range(number_runners):
         runner = Runners[i]
         corral = runner.corral
@@ -225,6 +225,7 @@ def main():
                 # get the runner object
                 runner = Runners[key]
                 # if it hasn't started, and it should start, make it start 
+                print runner.started
                 if (runner.started==False):
                     if runner.startTime < minute:
                         Runners[key].started=True

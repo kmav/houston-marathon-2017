@@ -97,7 +97,9 @@ for minute in range(0,501,minuteInterval):
 			else:
 				simData[mile] += groupedNumber
 	print simData
+	print started
 	txt +=  str(minute)+','+str(started)
+	
 	for each in simData:
 		txt+= ','+str(each)
 	txt += ','+str(finished)

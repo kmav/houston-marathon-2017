@@ -9,7 +9,7 @@ import sys
 
 groupedNumber = 40
 minuteInterval = 2
-con = mdb.connect(host='bpeynetti-chicagomarathon2015-1689696',user='bpeynetti',db='c9')
+con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 file = open("simulation_results.csv",'w');

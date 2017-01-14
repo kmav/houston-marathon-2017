@@ -524,6 +524,7 @@ def main():
 					RunnersSorted[i]['started'] = 1
 					RunnersSorted[i]['position'] = 0.00
 		print "changing positions"
+		print sum(row['started'] for row in RunnersSorted)
 		for i in range(len(RunnersSorted)):
 			#print i,
 			runner = RunnersSorted[i]

@@ -5,8 +5,8 @@ var trackersRefresh = 0;
 var pageUpdate = 0;
 var densityUpdate = 0;
 
-var startHour = 8;
-var startMinute = 30;
+var startHour = 14;
+var startMinute = 0;
 
 var yScaleBoth = 0;
 
@@ -335,7 +335,7 @@ function updateASGraph(data)
 		});
 		
 	text = svg.selectAll(".text_bar")
-		.sort(sortItems)
+		//.sort(sortItems)
 		.transition()
 		.text(function(d){
 				if (+d.Location==10){
@@ -371,6 +371,7 @@ function updateMTGraph(data){
 	//filter out to MT
 	var AidStations = [];
 	var MedicalTentsDataset =  data.filter(filterMedicalTents);
+	console.table(MedicalTentsDataset);
 	
 	/*if (MedicalTentsDataset.length<3){
 		MedicalTentsDataset = data.filter(easyFilter);
@@ -378,8 +379,8 @@ function updateMTGraph(data){
 	
 	var svg = d3.select("#MT_graph")
 	var p = 10;
-	var w = $('#MT_graph').width();
-	var h = $("#MT_graph").height();
+	var w = document.getElementById('medicalTent').offsetWidth *0.8;
+	var h = document.getElementById('medicalTent').offsetHeight*0.8;
 	
 	var xScale = d3.scale.linear()
 				.domain([0,1.2*d3.max(MedicalTentsDataset,function(d) { return +d.Beds;})])

@@ -1,2 +1,2 @@
 AlertStatus,temperature,windSpeed,windDirection,humidity,runnersOnCourse,runnersFinished,hospitalTransports,patientsSeen,Alert,pace350Lat,pace350Long,pace400Lat,pace400Long,pace415Lat,pace415Long,pace500Lat,pace500Long,pace530Lat,pace530Long,pace600Lat,pace600Long,emergencyCheck,AlertLat,AlertLong,shelterDisplay
-1,60,25,"W",85,2147483647,0,6,0,"Join us for the 2017 Houston Marathon tomorrow!!!",,,,,,,,,,,,,0,10.1,10.1,0
+1,60,25,"W",85,2147483647,0,6,0,"Join us for the 2017 Houston Marathon tomorrow!!!!",,,,,,,,,,,,,0,10.1,10.1,0
