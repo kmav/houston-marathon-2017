@@ -102,7 +102,7 @@
 </head>
 
 <body>
-
+        <a href="profile.php"><div style="float:left;">Back to Home Page</div></a> <br>
         <h1 style="text-align: center;">Data Visualization User Guide</h1>
         <h4 style="text-align: center">Below is a list of features supported by our system, and how to interpret the information</h4>
         <h5 style="text-align: center">Note: Our system is optimized for the 1080 x 1920 and 1920 x 1080 display screens in Forward Command - not for mobile!</h5>
@@ -186,20 +186,18 @@
                     and the exact number of patients currently checked in.</li>
                 </ul></li>
                 <br>
-                <li><span style="font-weight: bold">Runners Per Mile Graph</span>: 
+                <li><span style="font-weight: bold">Runners Per Mile Graphs</span>: 
                 <ul>
-                    <li>The two line graphs visualize where the runners are along the course. 
+                    <li>The stacked bar charts visualize where the runners are along the course. 
                     The values correspond to the colored segments on the course map 
                     (which reflect runner density for each mile). 
-                    The blue line represents the current runner density by mile, 
-                    based on our race simulation which incorporates the 5K counts received every 10 minutes 
-                    from the timing mats. The red line represents our simulated representation 
-                    of the distribution of runners along the course 30 minutes from the now. 
-                    Hovering over the lines will show a popup displaying the minute of the race 
-                    (either the current minute or the current minute + 30), the mile number, 
-                    and the simulated number of runners in that mile segment. 
-                    This information is also shown when clicking on a colored mile segment 
-                    along the course map on the lefthand side.</li>
+                    Each dark purple bar represents the number of full marathon runners per mile 
+                    based on our race simulation, which incorporates the 5K counts received every 10 minutes 
+                    from the timing mats. The light purple bars represent the number of half marathon runners.
+                    Additionally, there is a separate "Half Marathon Bypass" graph, that shows the number of 
+                    half-marathon runners in each mile of the section of the course where the half marathoners break off. 
+                    They rejoin the graph with the full marathons when they rejoin the same course around mile 24.
+                    </li>
                 </ul></li>
                 <br>
         </ul>

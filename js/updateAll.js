@@ -378,8 +378,8 @@ function updateMTGraph(data){
 	
 	var svg = d3.select("#MT_graph")
 	var p = 10;
-	var w = $('#MT_graph').width()*0.75;
-	var h = $("#MT_graph").height()*0.75;
+	var w = $('#MT_graph').width();
+	var h = $("#MT_graph").height();
 	
 	var xScale = d3.scale.linear()
 				.domain([0,1.2*d3.max(MedicalTentsDataset,function(d) { return +d.Beds;})])

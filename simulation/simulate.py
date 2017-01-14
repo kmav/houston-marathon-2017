@@ -345,6 +345,7 @@ def main():
 				speed = getSpeed(runner)-runner['deviation']
 				segment = int(runner['position']/5.00)
 				#if it's on the second half of any but the last segment, modify as how it should be in the next segment
+				speedChange = 0
 				if runner['position']%5.00>2.5:
 					if runner['position']<35.00:
 						speedChange = speed*movementsSign[segment+1]
