@@ -31,6 +31,22 @@ function displayRunnerData(data){
     
     //(currentMin + "minute")
 }
+
+/* UNCOMMENT THIS TO INTEGRATE MIKATIMING SCRAPING (also replace line 310 with 308)
+function displayRunnerData(data){
+    
+    currentStarted = data[0].started;
+    currentFinished = data[0].finished;
+    
+    d3.select("#RunnersStarted")
+    .text("Started: " + currentStarted);
+    
+    d3.select("#RunnersFinished")
+    .text("\u2212 Finished: " + currentFinished);
+    
+    //(currentMin + "minute")
+}
+*/
     
 function displayInfo(data){
     //.table(data);
@@ -286,6 +302,11 @@ if (shelterDisplay==1){
 }
 
 //d3.csv("simulation/DensitiesFull.csv",displayDrops);
+
+
+//uncomment to integrateMikaTiming!
+//d3.csv("data/mikaTiming.csv", displayRunnerData)
+
 d3.csv("data/Densities.csv",displayRunnerData);
 d3.csv("data/genInfo.csv",displayInfo);
 

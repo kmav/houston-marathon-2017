@@ -137,7 +137,7 @@ if ($_SESSION['start'] + (7*60*60) < time()) {
                 <div id="map_legend">
 					<p> Runners: </p>
 				<p>Opened Road <span class="boxes gray"></span></p>
-			        <p>0-1000 <span class="boxes green"></span></p>
+			        <p>250-1000 <span class="boxes green"></span></p>
 			        <p>1000-2000 <span class="boxes yellow"> </p>
 			        <p>2000-3000 <span class="boxes orange"> </p>
 			        <p>3000+ <span class="boxes red"> </p>

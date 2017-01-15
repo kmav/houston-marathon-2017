@@ -324,10 +324,10 @@ function generateLines() {
                     segmentStyle.color = 'red';
                     segmentStyle.weight = '10';
             }
-            /*if (runners<50)
+            if (runners<250)
             {
                 segmentStyle.color = '#a6a6a6';
-            }*/ //GRAY OUT SEGMENTS when REOPENED
+            } //GRAY OUT SEGMENTS when REOPENED
             
             ////(segmentStyle);
             
