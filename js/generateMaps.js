@@ -324,10 +324,10 @@ function generateLines() {
                     segmentStyle.color = 'red';
                     segmentStyle.weight = '10';
             }
-            if (runners<500)
+            /*if (runners<50)
             {
                 segmentStyle.color = '#a6a6a6';
-            }
+            }*/ //GRAY OUT SEGMENTS when REOPENED
             
             ////(segmentStyle);
             
@@ -449,7 +449,7 @@ function runnerTracking(){
 
         for (var p=0;p<12;p++)
         {
-            geojson[p]["properties"]["icon"]["className"] = "my-icon icon-sf";
+            geojson[p]["properties"]["icon"]["className"] = "my-icon icon-dc";
             geojson[p]["properties"]["icon"]["iconSize"] = null;
         }
         

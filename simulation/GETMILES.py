@@ -9,8 +9,8 @@ import sys
 
 groupedNumber = 10
 minuteInterval=2
-#con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
-con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
+con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+#con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 
@@ -41,6 +41,7 @@ for minute in range(0,501,minuteInterval):
 		j+=1
 		# print j,
 		runner = {}
+		runner['id'] = int(row["id"])
 		runner['runnerId']	= int(row["runnerId"])
 		runner['half'] = int(row["half"])
 		runner['minute']	= int(row["minute"])
@@ -74,8 +75,11 @@ for minute in range(0,501,minuteInterval):
 			started += groupedNumber
 			#simData[0]+=4
 			pos = float(r['position'])
+			
 			# file.write(str(pos)+'\n')
 			mile = int(float(pos) / 1.609)
+			if mile >= 12:
+				print pos, mile;
 			# if (r['half']==1) and mile>8:
 				# print "I'm half, position is ",float(pos)/1.609,"th mile (floored) -> " ,
 				
@@ -84,6 +88,7 @@ for minute in range(0,501,minuteInterval):
 				if mile<8:
 					halfData[mile] += groupedNumber;
 				if mile>10:
+					print minute, mile, runner['id'],runner['runnerId'], halfData[mile+13];
 					halfData[mile + 13] += groupedNumber;
 			
 			if (r['half'])==1 and (mile>7 and mile<11):

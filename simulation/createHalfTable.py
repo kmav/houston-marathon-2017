@@ -46,6 +46,9 @@ def getSpeed(runner):
     if corral == 3:
         speed =  DISTANCE*(-0.02845189371)+	5.07124675
         # speed = 5.53263038 + (-0.02222242746)*DISTANCE
+    #CORRAL E
+    if corral == 4:
+        speed = DISTANCE*(-0.03)+ 5
     
 
     return speed+runner.deviation
@@ -82,7 +85,7 @@ def GenerateRunners(number_runners):
         startInterval[i] = float(each[4])
         i+=1
     
-    corralCum = [0]*4
+    corralCum = [0]*5
     corralCum[0]=1
     corralCum[1]=1
     print "Number:",number_runners
@@ -117,7 +120,7 @@ def GenerateRunners(number_runners):
     #here, we would assign starting times to the fastest first and then the slow people
     
     #now assign to each of the runners a time
-    corralNumDone = [0]*4
+    corralNumDone = [0]*5
     for i in range(number_runners):
         runner = Runners[i]
         corral = runner.corral

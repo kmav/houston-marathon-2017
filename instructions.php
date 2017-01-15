@@ -166,14 +166,14 @@
                         <li><span style="font-style: italic">3:50</span>: 3:50 Pacer</li>
                         <li><span style="font-style: italic">4:00</span>: 4:00 Pacer</li>
                         <li><span style="font-style: italic">4:15</span>: 4:15 Pacer</li>
+                        <li><span style="font-style: italic">4:30</span>: 4:30 Pacer</li>
                         <li><span style="font-style: italic">5:00</span>: 5:00 Pacer</li>
-                        <li><span style="font-style: italic">5:30</span>: 5:30 Pacer</li>
-                        <li><span style="font-style: italic">6:00</span>: 6:00 Pacer</li>
+                        <li><span style="font-style: italic">5:15</span>: 5:15 Pacer</li>
                     </ul></li>
                     </ul></li>
                 </ul></li>
                 <br>
-                <li><span style="font-weight: bold">Medical Tents Graph</span>: 
+                <li><span style="font-weight: bold">Aid Stations/Medical Tents Graph</span>: 
                 <ul>
                     <li>The bar chart displays the current bed occupancy for each of the medical tents along the course 
                     and at the finish line. Grey bars represent the total number of beds held by the medical tent 

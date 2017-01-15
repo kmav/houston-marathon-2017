@@ -117,23 +117,23 @@
         */
         
         //ID FOR TRACKERS
-        $leadF = 8880320574;
-        $leadM = 8880320575;
-        $turtle = 8880323596;
-        $leadFH = 8880320580;
-        $leadMH = 8880320581;
-        $leadWM = 8880420993;
-        $pace350 = 8880120781;
-        $pace400 = 8880120782;
-        $pace415 = 8880120783;
-        $pace430 = 8880120784
-        $pace500 = 8880120785;
-        $pace515 = 8880120786;
-        $pace530 = 8880420998;
-        $pace600 = 8880420999;
+        $leadF = 8880328566;
+        $leadM = 8880331374;
+        $turtle = NULL;
+        $leadFH = 8880331375;
+        $leadMH = 8880331376;
+        $leadWM = NULL;
+        $pace350 = 8880120774;
+        $pace400 = 8880120775;
+        $pace415 = 8880120776;
+        $pace430 = 8880120777;
+        $pace500 = 8880120778;
+        $pace515 = 8880120779;
+        $pace530 = NULL;
+        $pace600 = NULL;
         
         //turtle
-        $leadWF = 8880328566;
+        $leadWF = NULL;
 
         // now we need to get the last from general information database
         // and get the stuff that we need

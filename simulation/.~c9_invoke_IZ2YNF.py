@@ -46,11 +46,9 @@ def getSpeed(runner):
     if corral == 2:
         speed = 6.05103729 + (-0.02377687221)*DISTANCE
     #CORRAL D
-    if corral == 3:
+    if corral == 3 or corral == 4:
         speed = 5.53263038 + (-0.02222242746)*DISTANCE
-    #CORRAL E
-    if corral == 4:
-        speed =  5.1 + (-0.03)*DISTANCE
+    i
     # add on the individual runner speed deviation
     return speed+runner.deviation
 
@@ -227,6 +225,7 @@ def main():
                 # get the runner object
                 runner = Runners[key]
                 # if it hasn't started, and it should start, make it start 
+                print runner.started
                 if (runner.started==False):
                     if runner.startTime < minute:
                         Runners[key].started=True

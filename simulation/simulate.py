@@ -9,8 +9,8 @@ import sys
 
 #con = mdb.connect(host='localhost',user='bpeynetti',db='c9')
 #con = mdb.connect(host='bpeynetti-chicagomarathon2015-1689696', user='bpeynetti', db='c9')
-#con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
-con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
+con = mdb.connect(host='localhost',user='rachellin23',db='houston2016')
+#con = mdb.connect(host='localhost',user='root',passwd='mar@1h0niem5',db='houston2017')
 cur = con.cursor(mdb.cursors.DictCursor)
 
 #connections
@@ -30,74 +30,108 @@ def getSpeed(runner):
     TEMP = float(currentTemp)
     DISTANCE = float(runner['position'])
     corral = runner['corral']
+    half = runner['half']
     speed = 0.0
-
+    
+    if half == 1:
+		if corral==0:
+			speed =  DISTANCE*(-0.01751328045)+7.625219365
+				
+		if corral==1:
+			speed =  DISTANCE*(-0.0216947077)+ 6.404176674
+				
+		if corral==2:
+			speed =  DISTANCE*(-0.02281207077)+	5.807824589
+				
+		if corral==3:
+			speed =  DISTANCE*(-0.02845189371)+	5.07124675
+				
+		if corral==4:
+			speed = DISTANCE*(-0.03)+ 5
+    else:
+		if corral==0:
+			speed = 7.410739129 + (-0.02280316304)*DISTANCE
+				
+		if corral==1:
+			speed = 6.720575488 + (-0.02714138849)*DISTANCE
+				
+		if corral==2:
+			speed = 6.05103729 + (-0.02377687221)*DISTANCE
+				
+		if corral==3:
+			speed = 5.53263038 + (-0.02222242746)*DISTANCE
+				
+		if corral==4:
+			speed =  5.1 + (-0.03)*DISTANCE
+				
+		
+	
     #first to go, awd
-    if corral == 0:
-        speed = 5.33
-    #american development
-    if corral == 2:
-        corral = 1
-        speed = 9.55
+    # if corral == 0:
+    #     speed = 5.33
+    # #american development
+    # if corral == 2:
+    #     corral = 1
+    #     speed = 9.55
 
-    #elites
-    if corral== 1 : 
-        if DISTANCE<10: 
-                speed = (9.64419873876+(-0.000931700630522)*TEMP) + (0.0249328163757 + (-0.000256469719805)* TEMP ) * DISTANCE 
-        if DISTANCE>=10: 
-                speed =  (9.83017994657+(0.00489768256501)*TEMP) + (0.00444863374136 + (-0.000604232629418)* TEMP ) * DISTANCE 
-    #a
-    if corral== 3 : 
-            if DISTANCE<10: 
-                    speed = (8.63220503083+(-0.00382457306738)*TEMP) + (0.0193243058485 + (-6.82844351124e-05)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (8.68436001534+(0.00660202442628)*TEMP) + (0.00916185756893 + (-0.000766755226609)* TEMP ) * DISTANCE 
+    # #elites
+    # if corral== 1 : 
+    #     if DISTANCE<10: 
+    #             speed = (9.64419873876+(-0.000931700630522)*TEMP) + (0.0249328163757 + (-0.000256469719805)* TEMP ) * DISTANCE 
+    #     if DISTANCE>=10: 
+    #             speed =  (9.83017994657+(0.00489768256501)*TEMP) + (0.00444863374136 + (-0.000604232629418)* TEMP ) * DISTANCE 
+    # #a
+    # if corral== 3 : 
+    #         if DISTANCE<10: 
+    #                 speed = (8.63220503083+(-0.00382457306738)*TEMP) + (0.0193243058485 + (-6.82844351124e-05)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (8.68436001534+(0.00660202442628)*TEMP) + (0.00916185756893 + (-0.000766755226609)* TEMP ) * DISTANCE 
 
-    if corral== 4 : 
-            if DISTANCE<10: 
-                    speed = (7.98493369699+(-0.00453265898854)*TEMP) + (0.0267840268359 + (-0.000131032547266)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (8.19300906124+(0.00444016642186)*TEMP) + (0.00491892840694 + (-0.000745671376061)* TEMP ) * DISTANCE 
-    if corral== 5 : 
-            if DISTANCE<10: 
-                    speed = (7.52058024011+(-0.00480665269828)*TEMP) + (0.0279470019205 + (-0.000158780053557)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (7.76181966951+(0.00412169288934)*TEMP) + (0.00337916243936 + (-0.000764865156778)* TEMP ) * DISTANCE 
-    if corral== 6 : 
-            if DISTANCE<10: 
-                    speed = (7.17481729795+(-0.00438339369739)*TEMP) + (0.0254197458153 + (-0.000107657154661)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (7.37919414097+(0.00544428219455)*TEMP) + (0.00640028541955 + (-0.000838846452681)* TEMP ) * DISTANCE 
-    if corral== 7 : 
-            if DISTANCE<10: 
-                    speed = (6.93550624774+(-0.00374942346129)*TEMP) + (0.0308542405954 + (-0.000210439989279)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (7.11186613731+(0.00695459217648)*TEMP) + (0.0109394824862 + (-0.000946642791164)* TEMP ) * DISTANCE 
-    if corral== 8 : 
-            if DISTANCE<10: 
-                    speed = (6.73753769292+(-0.00393604373944)*TEMP) + (0.0354416751432 + (-0.00032493723748)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (7.14188096529+(0.00326161798086)*TEMP) + (-0.00028552029072 + (-0.000809021936703)* TEMP ) * DISTANCE 
-    if corral== 9 : 
-            if DISTANCE<10: 
-                    speed = (6.33105080709+(-0.00338678012864)*TEMP) + (0.0257720634635 + (-0.000372695303258)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (6.91431918238+(-0.00108374220717)*TEMP) + (-0.0131216390398 + (-0.000597959197359)* TEMP ) * DISTANCE 
-    if corral== 10 : 
-            if DISTANCE<10: 
-                    speed = (6.00623980025+(-0.00283603398457)*TEMP) + (0.0128652191841 + (-0.000425523726021)* TEMP ) * DISTANCE 
-            if DISTANCE>=10: 
-                    speed =  (6.5386297425+(-0.00233551710924)*TEMP) + (-0.0176116607083 + (-0.000520283204613)* TEMP ) * DISTANCE 
-    if corral== 11 : 
-            if DISTANCE<10: 
-                    speed = (5.93291719084+(-0.00322367137615)*TEMP) + (0.000500343064203 + (-0.000389975526887)* TEMP ) * DISTANCE 
-            if DISTANCE>=10:
-                    speed =  (6.5121368141+(-0.00486876666938)*TEMP) + (-0.0226966469797 + (-0.000444260057232)* TEMP ) * DISTANCE 
-    if corral== 12 : 
-            if DISTANCE<10: 
-                    speed = (5.73527217176+(-0.00461414224181)*TEMP) + (-0.0130848767638 + (-0.000499228830686)* TEMP ) * DISTANCE 
-            if DISTANCE>=10:
-                    speed =  (6.25493721077+(-0.00977631228215)*TEMP) + (-0.0301529659912 + (-0.000266797577107)* TEMP ) * DISTANCE 
+    # if corral== 4 : 
+    #         if DISTANCE<10: 
+    #                 speed = (7.98493369699+(-0.00453265898854)*TEMP) + (0.0267840268359 + (-0.000131032547266)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (8.19300906124+(0.00444016642186)*TEMP) + (0.00491892840694 + (-0.000745671376061)* TEMP ) * DISTANCE 
+    # if corral== 5 : 
+    #         if DISTANCE<10: 
+    #                 speed = (7.52058024011+(-0.00480665269828)*TEMP) + (0.0279470019205 + (-0.000158780053557)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (7.76181966951+(0.00412169288934)*TEMP) + (0.00337916243936 + (-0.000764865156778)* TEMP ) * DISTANCE 
+    # if corral== 6 : 
+    #         if DISTANCE<10: 
+    #                 speed = (7.17481729795+(-0.00438339369739)*TEMP) + (0.0254197458153 + (-0.000107657154661)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (7.37919414097+(0.00544428219455)*TEMP) + (0.00640028541955 + (-0.000838846452681)* TEMP ) * DISTANCE 
+    # if corral== 7 : 
+    #         if DISTANCE<10: 
+    #                 speed = (6.93550624774+(-0.00374942346129)*TEMP) + (0.0308542405954 + (-0.000210439989279)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (7.11186613731+(0.00695459217648)*TEMP) + (0.0109394824862 + (-0.000946642791164)* TEMP ) * DISTANCE 
+    # if corral== 8 : 
+    #         if DISTANCE<10: 
+    #                 speed = (6.73753769292+(-0.00393604373944)*TEMP) + (0.0354416751432 + (-0.00032493723748)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (7.14188096529+(0.00326161798086)*TEMP) + (-0.00028552029072 + (-0.000809021936703)* TEMP ) * DISTANCE 
+    # if corral== 9 : 
+    #         if DISTANCE<10: 
+    #                 speed = (6.33105080709+(-0.00338678012864)*TEMP) + (0.0257720634635 + (-0.000372695303258)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (6.91431918238+(-0.00108374220717)*TEMP) + (-0.0131216390398 + (-0.000597959197359)* TEMP ) * DISTANCE 
+    # if corral== 10 : 
+    #         if DISTANCE<10: 
+    #                 speed = (6.00623980025+(-0.00283603398457)*TEMP) + (0.0128652191841 + (-0.000425523726021)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10: 
+    #                 speed =  (6.5386297425+(-0.00233551710924)*TEMP) + (-0.0176116607083 + (-0.000520283204613)* TEMP ) * DISTANCE 
+    # if corral== 11 : 
+    #         if DISTANCE<10: 
+    #                 speed = (5.93291719084+(-0.00322367137615)*TEMP) + (0.000500343064203 + (-0.000389975526887)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10:
+    #                 speed =  (6.5121368141+(-0.00486876666938)*TEMP) + (-0.0226966469797 + (-0.000444260057232)* TEMP ) * DISTANCE 
+    # if corral== 12 : 
+    #         if DISTANCE<10: 
+    #                 speed = (5.73527217176+(-0.00461414224181)*TEMP) + (-0.0130848767638 + (-0.000499228830686)* TEMP ) * DISTANCE 
+    #         if DISTANCE>=10:
+    #                 speed =  (6.25493721077+(-0.00977631228215)*TEMP) + (-0.0301529659912 + (-0.000266797577107)* TEMP ) * DISTANCE 
     return 0.93*speed+runner['deviation']
 
 
